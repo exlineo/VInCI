@@ -1,0 +1,19 @@
+<header class="logo">
+    <a href routerLink="/" [title]="mServ.menus.logo.t">
+        <img [src]="mServ.menus.logo.l" [title]="mServ.menus.logo.t" [alt]="mServ.menus.logo.d" />
+    </a>
+</header>
+<ul>
+    <li *ngFor="let m of mServ.menus.principal">
+        <a href [routerLink]="m.l" [title]="m.t">
+            <i [class]="'fas ' + m.i"></i>{{ m.t }}
+        </a>
+    </li>
+</ul>
+<ul>
+    <li *ngFor="let p of mServ.menus.pied">
+        <a href [routerLink]="p.l" [title]="p.t">
+            <i [class]="'fas ' + p.i"></i>
+        </a>
+    </li>
+</ul>

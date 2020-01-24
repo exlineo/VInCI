@@ -1,0 +1,49 @@
+header.logo {
+    height: 20vh;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 4px;
+    font-size: 11px;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-around;
+}
+
+ul:nth-child(2) {
+    height: calc(80vh - 40px);
+    flex-flow: column nowrap;
+}
+
+ul:nth-child(2) li {
+    margin-bottom: 20px;
+}
+
+ul:nth-child(2) li a {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+ul:nth-child(2) li a i {
+    font-size: 36px;
+    margin-bottom: 3px;
+}
+
+ul:nth-child(3) {
+    height: 40px;
+    padding: 5px;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+ul:nth-child(3) li {
+    margin: 5px auto;
+}
