@@ -8,6 +8,9 @@ import { PublicationsComponent } from './pages/publications/publications.compone
 import { NewsComponent } from './pages/news/news.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { Erreur404Component } from './pages/erreur404/erreur404.component';
+import { SitemapComponent } from './pages/infos/sitemap/sitemap.component';
+import { RgpdComponent } from './pages/infos/rgpd/rgpd.component';
+import { MentionsComponent } from './pages/infos/mentions/mentions.component';
 
 const routes: Routes = [
   {path:'', component:AccueilComponent},
@@ -17,6 +20,9 @@ const routes: Routes = [
   {path:'publication', component:PublicationsComponent},
   {path:'actualites', component:NewsComponent},
   {path:'contact', component:ContactComponent},
+  {path:'sitemap', component:SitemapComponent},
+  {path:'rgpd', component:RgpdComponent},
+  {path:'mentions', component:MentionsComponent},
   { path: '**', component:Erreur404Component }
 ];
 

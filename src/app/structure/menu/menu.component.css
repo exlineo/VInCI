@@ -2,6 +2,11 @@ header.logo {
     height: 20vh;
 }
 
+header.logo img {
+    max-width: 100%;
+    margin: 4px;
+}
+
 ul {
     list-style: none;
     margin: 0;
@@ -30,6 +35,10 @@ ul:nth-child(2) li {
 ul:nth-child(2) li a {
     display: flex;
     flex-flow: column nowrap;
+}
+
+ul:nth-child(2) li a:hover li {
+    transform: rotate(180deg);
 }
 
 ul:nth-child(2) li a i {

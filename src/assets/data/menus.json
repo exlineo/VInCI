@@ -1,6 +1,7 @@
 {
-    "logo": { "l": "assets/images/Logo_VinCi_nb_web.png", "t": "VInCI", "d": "Logo du projet interreg VInCI" },
+    "logo": { "l": "assets/images/logos/Logo_VinCi_nb_web.svg", "t": "VInCI", "d": "Logo du projet interreg VInCI" },
     "principal": [
+        { "t": "VInCI", "l": "/", "i": "fa-home", "g": "#F7C45F", "d": "#28364A" },
         { "t": "Le projet", "l": "/projet", "i": "fa-project-diagram", "g": "#F7C45F", "d": "#28364A" },
         { "t": "Actions", "l": "/actions", "i": "fa-cubes", "g": "#28364A", "d": "#D65353" },
         { "t": "Partenaires", "l": "/partenaires", "i": "fa-users-cog", "g": "#F7C45F", "d": "#28364A" },
@@ -8,6 +9,15 @@
         { "t": "Actualités", "l": "/actualites", "i": "fa-wind", "g": "#FFEED6", "d": "#28364A" },
         { "t": "Contact", "l": "/accueil", "i": "fa-id-badge", "g": "#28364A", "d": "#FFEED6" }
     ],
+    "menu": {
+        "accueil": { "t": "VInCI", "l": "/", "i": "fa-home", "g": "#F7C45F", "d": "#28364A" },
+        "projet": { "t": "Le projet", "l": "/projet", "i": "fa-project-diagram", "g": "#F7C45F", "d": "#28364A" },
+        "actions": { "t": "Actions", "l": "/actions", "i": "fa-cubes", "g": "#28364A", "d": "#D65353" },
+        "partenaires": { "t": "Partenaires", "l": "/partenaires", "i": "fa-users-cog", "g": "#F7C45F", "d": "#28364A" },
+        "publication": { "t": "Publications", "l": "/publications", "i": "fa-copy", "g": "#28364A", "d": "#2D5C5C" },
+        "actualites": { "t": "Actualités", "l": "/actualites", "i": "fa-wind", "g": "#FFEED6", "d": "#28364A" },
+        "contact": { "t": "Contact", "l": "/accueil", "i": "fa-id-badge", "g": "#28364A", "d": "#FFEED6" }
+    },
     "pied": [
         { "t": "Plan du site", "l": "/sitemap", "i": "fa-sitemap", "g": "#28364A", "d": "#D65353" },
         { "t": "Mentions légales", "l": "/mentions", "i": "fa-copyright", "g": "#F7C45F", "d": "#28364A" },

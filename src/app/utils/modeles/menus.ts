@@ -6,6 +6,7 @@ export interface ListeMenu {
 
 export interface ItemMenus{
     t:string;
+    a:string;
     l:string;
     i?:string;
     g?:string;
