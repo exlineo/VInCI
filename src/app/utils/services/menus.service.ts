@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { ListeMenu, ItemMenus } from '../modeles/menus';
+import { ListeMenuI, ItemMenusI, Menus, ItemMenu } from '../modeles/menus';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenusService {
-  menus:ListeMenu; // Liste des ménus sélectionnés
-  menu:ItemMenus; // Menu actuellement sélectionné
+  menus:ListeMenuI = new Menus(); // Liste des ménus sélectionnés
+  menu:ItemMenusI = new ItemMenu(); // Menu actuellement sélectionné
   page:any = {}; // Page actuelle
   langue:string; // Langue de l'utilisateur
   /**
@@ -16,6 +16,7 @@ export class MenusService {
    * @param htt HttpClient
    */
   constructor(private http:HttpClient) {    
+    
     this.getMenus();
     this.langue = this.getLangue() || "fr";
     
@@ -38,9 +39,10 @@ export class MenusService {
    * Récupérer les liens et paramètres des menus
    */
   getMenus(){
-    this.http.get<ListeMenu>('assets/data/menus.json').subscribe(m => {
+    this.http.get<ListeMenuI>('assets/data/menus.json').subscribe(m => {
       this.menus = m;
       console.log(m);
+      this.getMenu("/");
     });
   }
   /**

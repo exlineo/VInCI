@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenusService } from 'src/app/utils/services/menus.service';
 
 @Component({
   selector: 'app-actions',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public mServ:MenusService) { }
 
   ngOnInit() {
   }

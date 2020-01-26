@@ -1,10 +1,10 @@
-export interface ListeMenu {
-    logo:Img;
-    principal:Array<ItemMenus>;
-    pied:Array<ItemMenus>;
+export interface ListeMenuI {
+    logo:ImgI;
+    principal:Array<ItemMenusI>;
+    pied:Array<ItemMenusI>;
 }
 
-export interface ItemMenus{
+export interface ItemMenusI{
     t:string;
     a:string;
     l:string;
@@ -13,8 +13,21 @@ export interface ItemMenus{
     d?:string;
 }
 
-export interface Img{
+export interface ImgI{
     t:string;
     l:string;
     d?:string;
+}
+export class ItemMenu implements ItemMenusI{
+    t = '';
+    a = '';
+    l = '';
+    i = '';
+    g = '';
+    d = '';
+}
+export class Menus implements ListeMenuI{
+    logo = {t:'',l:'', d:''};
+    principal = [new ItemMenu()];
+    pied = [new ItemMenu()];
 }

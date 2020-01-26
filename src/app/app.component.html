@@ -1,8 +1,4 @@
 <nav>
     <app-menu></app-menu>
 </nav>
-<main>
-    <section>
-        <router-outlet (activate)="changeRoute()"></router-outlet>
-    </section>
-</main>
+<router-outlet (activate)="changeRoute()"></router-outlet>
