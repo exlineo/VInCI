@@ -1,0 +1,34 @@
+{
+  "info": {
+    "name": "action"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "alias": {
+      "type": "string"
+    },
+    "intro": {
+      "type": "text"
+    },
+    "contenu": {
+      "type": "richtext"
+    },
+    "media": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "partenaires": {
+      "collection": "partenaire"
+    }
+  },
+  "connection": "default",
+  "collectionName": "actions"
+}

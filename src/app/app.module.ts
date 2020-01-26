@@ -20,6 +20,7 @@ import { MentionsComponent } from './pages/infos/mentions/mentions.component';
 import { RgpdComponent } from './pages/infos/rgpd/rgpd.component';
 import { SitemapComponent } from './pages/infos/sitemap/sitemap.component';
 import { ToolsService } from './utils/tools.service';
+import { MenusPipe } from './utils/menus.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ToolsService } from './utils/tools.service';
     Erreur404Component,
     MentionsComponent,
     RgpdComponent,
-    SitemapComponent
+    SitemapComponent,
+    MenusPipe
   ],
   imports: [
     BrowserModule,

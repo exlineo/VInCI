@@ -9,7 +9,7 @@ import { MenusService } from 'src/app/utils/services/menus.service';
 })
 export class SitemapComponent implements OnInit {
 
-  constructor(private mServ:MenusService) { }
+  constructor(public mServ:MenusService) { }
 
   ngOnInit() {
   }

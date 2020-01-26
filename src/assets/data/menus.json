@@ -1,8 +1,7 @@
 {
     "logo": { "l": "assets/images/logos/Logo_VinCi_nb_web.svg", "t": "VInCI", "d": "Logo du projet interreg VInCI" },
     "principal": [
-        { "t": "VInCI", "l": "/", "i": "fa-home", "g": "#F7C45F", "d": "#28364A" },
-        { "t": "Le projet", "l": "/projet", "i": "fa-project-diagram", "g": "#F7C45F", "d": "#28364A" },
+        { "t": "Le projet", "l": "/", "i": "fa-project-diagram", "g": "#F7C45F", "d": "#28364A" },
         { "t": "Actions", "l": "/actions", "i": "fa-cubes", "g": "#28364A", "d": "#D65353" },
         { "t": "Partenaires", "l": "/partenaires", "i": "fa-users-cog", "g": "#F7C45F", "d": "#28364A" },
         { "t": "Publications", "l": "/publications", "i": "fa-copy", "g": "#28364A", "d": "#2D5C5C" },
@@ -23,5 +22,6 @@
         { "t": "Mentions légales", "l": "/mentions", "i": "fa-copyright", "g": "#F7C45F", "d": "#28364A" },
         { "t": "RGPD", "l": "/rgpd", "i": "fa-gavel", "g": "#28364A", "d": "#2D5C5C" },
         { "t": "Contact", "l": "/contact", "i": "fa-feather-alt", "g": "#FFEED6", "d": "#28364A" }
-    ]
+    ],
+    "params": { "serveur": "http://localhost:1337/" }
 }

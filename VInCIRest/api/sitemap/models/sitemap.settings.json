@@ -1,0 +1,35 @@
+{
+  "connection": "default",
+  "collectionName": "sitemaps",
+  "info": {
+    "name": "sitemap"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "chemin": {
+      "type": "string"
+    },
+    "menu": {
+      "type": "enumeration",
+      "enum": [
+        "principal",
+        "pied"
+      ]
+    },
+    "icone": {
+      "type": "string"
+    },
+    "couleurGauche": {
+      "model": "couleur"
+    },
+    "couleurDroite": {
+      "model": "couleur"
+    }
+  }
+}

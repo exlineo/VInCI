@@ -1,19 +1,19 @@
 <header class="logo">
-    <a href routerLink="/" [title]="mServ.menus.logo.t">
-        <img [src]="mServ.menus.logo.l" [title]="mServ.menus.logo.t" [alt]="mServ.menus.logo.d" />
+    <a href routerLink="/" title="VInCI">
+        <img src="assets/images/Logo_VinCi_nb_web.png" title="Projet VInCI" alt="Logo du projet VInCI" />
     </a>
 </header>
 <ul>
-    <li *ngFor="let m of mServ.menus.principal">
-        <a href [routerLink]="m.l" [title]="m.t">
-            <i [class]="'fas ' + m.i"></i>{{ m.t }}
+    <li *ngFor="let m of (mServ.menus | menusPipe:'principal')">
+        <a href [routerLink]="m.chemin" [title]="m.titre">
+            <i [class]="'fas ' + m.icone"></i>{{ m.titre }}
         </a>
     </li>
 </ul>
 <ul>
-    <li *ngFor="let p of mServ.menus.pied">
-        <a href [routerLink]="p.l" [title]="p.t">
-            <i [class]="'fas ' + p.i"></i>
+    <li *ngFor="let p of (mServ.menus | menusPipe:'pied')">
+        <a href [routerLink]="p.chemin" [title]="p.titre">
+            <i [class]="'fas ' + p.icone"></i>
         </a>
     </li>
 </ul>

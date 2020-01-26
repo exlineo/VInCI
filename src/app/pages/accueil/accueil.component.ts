@@ -11,7 +11,6 @@ export class AccueilComponent implements OnInit {
   constructor(public mServ:MenusService) { }
 
   ngOnInit() {
-    console.log(typeof(this.mServ.menu.g));
   }
 
 }

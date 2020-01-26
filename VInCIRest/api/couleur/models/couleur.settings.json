@@ -1,0 +1,19 @@
+{
+  "connection": "default",
+  "collectionName": "couleurs",
+  "info": {
+    "name": "couleur"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "nom": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    }
+  }
+}
