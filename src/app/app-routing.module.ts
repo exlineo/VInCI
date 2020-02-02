@@ -14,7 +14,7 @@ import { MentionsComponent } from './pages/infos/mentions/mentions.component';
 
 const routes: Routes = [
   {path:'', component:AccueilComponent},
-  {path:'projet', component:ProjetComponent},
+  {path:'vincis', component:ProjetComponent},
   {path:'actions', component:ActionsComponent},
   {path:'partenaires', component:PartenairesComponent},
   {path:'publication', component:PublicationsComponent},

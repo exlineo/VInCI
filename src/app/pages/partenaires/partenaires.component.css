@@ -1,0 +1,7 @@
+main>section:nth-child(2){
+    color:black;
+}
+main>section:nth-child(2) hr{
+    width:50%;
+    float:right;
+}

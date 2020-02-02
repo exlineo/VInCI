@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Title } from '@angular/platform-browser';
 
-import { ListeMenuI, ItemMenusI, Menus, ItemMenu, MenuI, LMenus } from '../modeles/menus';
+import { environment } from '../../../environments/environment';
+
+import { MenuI, LMenus, ImgI } from '../modeles/sets';
 
 @Injectable({
   providedIn: 'root'
@@ -10,17 +12,15 @@ import { ListeMenuI, ItemMenusI, Menus, ItemMenu, MenuI, LMenus } from '../model
 export class MenusService {
   menus: Array<MenuI> = [new LMenus()]; // Liste des ménus sélectionnés
   menu: MenuI = new LMenus(); // Menu actuellement sélectionné
-  page: any = {}; // Page actuelle
+  pages: any = {}; // Page actuelle
   langue: string; // Langue de l'utilisateur
   /**
    * Récupérer les menus au démarrage
-   * @param htt HttpClient
+   * @param http HttpClient
    */
   constructor(private http: HttpClient, private tServ: Title) {
-
     this.getMenus();
     this.langue = this.getLangue() || "fr";
-
   }
   /**
    * Obtenir la langue local de l'utilsateur
@@ -40,20 +40,16 @@ export class MenusService {
    * Récupérer les liens et paramètres des menus
    */
   getMenus() {
-    // this.http.get<ListeMenuI>('assets/data/menus.json').subscribe(m => {
-    //   this.menus = m;
-    //   console.log(m);
-    //   this.getMenu("/");
-    // });
-
-    this.http.get<Array<MenuI>>('http://localhost:1337/sitemaps').subscribe(m => {
-      this.menus = m;
-      console.log("Menu strapi", m);
+    this.http.get<Array<MenuI>>(environment.uri+'/sitemaps').subscribe(m => {
+      this.menus = m.sort((a, b) => (a.ordre > b.ordre) ? 1 : ((b.ordre > a.ordre) ? -1 : 0));
+      this.menu = this.menus[0];
+      console.log("Menu strapi", m, "Menu sélectionné", this.menu);
       // this.getMenu("/");
     });
   }
   /**
-   * 
+   * Récupérer le menu cliquer en fonction de son alias
+   * @param { string } alias Alias du menu servant à faire le tri
    */
   getMenu(alias: string) {
     console.log(alias);
@@ -65,20 +61,39 @@ export class MenusService {
         break;
       }
     }
-
+    /**
+     * Changer le titre de la page HTML
+     */
     this.tServ.setTitle("VInCI / " + this.menu.titre);
     console.log(this.menu);
   }
   /**
    * Récupérer les pages du site
+   * @param { string } alias Alias du menu servant à faire le tri
    */
   getPage(alias: string) {
-    if (alias.length == 0) {
-      alias = 'accueil';
+    // if (sessionStorage.getItem(alias)) {
+    //   this.page = JSON.parse(sessionStorage.getItem(alias));
+    // } else {
+      this.http.get(environment.uri + '/' + alias).subscribe(p => {
+        sessionStorage.setItem(alias, JSON.stringify(p));
+        this.pages = p;
+        console.log("Pages loadées", this.pages);
+      });
+    // }
+  }
+  /**
+   * Ajouter l'URL aux média pour leur chargement
+   * @param m Un média ou une liste de médias
+   */
+  setMedias(m:any){
+    console.log("Set medias : ", m);
+    if(typeof m === "object"){
+      m.url = environment.uri + m.url;
+    }else if(Array.isArray(m)){
+      m.forEach(i => {
+        i.url = environment.uri + i.url;
+      })
     }
-    this.http.get('assets/data/pages/' + this.langue + '/' + alias + '.json').subscribe(p => {
-      this.page = p;
-      console.log(p);
-    });
   }
 }

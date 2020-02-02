@@ -20,7 +20,10 @@ import { MentionsComponent } from './pages/infos/mentions/mentions.component';
 import { RgpdComponent } from './pages/infos/rgpd/rgpd.component';
 import { SitemapComponent } from './pages/infos/sitemap/sitemap.component';
 import { ToolsService } from './utils/tools.service';
+
 import { MenusPipe } from './utils/menus.pipe';
+import { MediaPipe } from './utils/media.pipe';
+import { MarkPipe } from './utils/mark.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { MenusPipe } from './utils/menus.pipe';
     MentionsComponent,
     RgpdComponent,
     SitemapComponent,
-    MenusPipe
+    MenusPipe,
+    MediaPipe,
+    MarkPipe
   ],
   imports: [
     BrowserModule,

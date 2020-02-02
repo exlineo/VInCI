@@ -11,6 +11,7 @@ export class ProjetComponent implements OnInit {
   constructor(public mServ:MenusService) { }
 
   ngOnInit() {
+    console.log(this.mServ.menu);
   }
 
 }

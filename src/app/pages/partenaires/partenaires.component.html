@@ -1,4 +1,14 @@
 <main>
-    <section [style.background-color]="mServ.menu.couleurGauche.code"></section>
-    <section [style.background-color]="mServ.menu.couleurDroite.code"></section>
+    <section [style.background-color]="mServ.menu.couleurGauche.code" id="map" class="map"></section>
+    <section [style.background-color]="mServ.menu.couleurDroite.code">
+        <article *ngFor="let p of mServ.pages">
+            <h3>{{ p.nom }} ({{ p.acronyme }})</h3>
+            <ul>
+                <li>Rôle : <em>{{ p.statut }}</em></li>
+                <li>Pays : {{ p.pays }}</li>
+                <li>Groupe de travail impliqués : {{ p.gt }}</li>
+            </ul>
+            <hr>
+        </article>
+    </section>
 </main>
