@@ -2,7 +2,7 @@
     <section [style.background-color]="mServ.menu.couleurGauche.code" [style.background-image]="'url(' + (mServ.menu.medias[0].url | mediaPipe) + ')'"></section>
     <section [style.background-color]="mServ.menu.couleurDroite.code">
         <h1>{{ mServ.menu.titre }}</h1>
-        <article *ngFor="let a of mServ.pages">
+        <article *ngFor="let a of mServ.page">
             <h2>{{ a.titre }}</h2>
             <blockquote>{{ a.intro }}</blockquote>
             <div [innerHtml]="a.contenu | mark"></div>

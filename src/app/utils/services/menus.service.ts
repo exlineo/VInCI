@@ -5,6 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { environment } from '../../../environments/environment';
 
 import { MenuI, LMenus, ImgI } from '../modeles/sets';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ import { MenuI, LMenus, ImgI } from '../modeles/sets';
 export class MenusService {
   menus: Array<MenuI> = [new LMenus()]; // Liste des ménus sélectionnés
   menu: MenuI = new LMenus(); // Menu actuellement sélectionné
-  pages: any = {}; // Page actuelle
+  page: Array<any> = [new Object()]; // Page actuelle
+
   langue: string; // Langue de l'utilisateur
   /**
    * Récupérer les menus au démarrage
@@ -58,6 +60,7 @@ export class MenusService {
       console.log(alias == m.chemin);
       if (alias == m.chemin) {
         this.menu = m;
+        this.getPage(this.menu.chemin);
         break;
       }
     }
@@ -75,13 +78,18 @@ export class MenusService {
     // if (sessionStorage.getItem(alias)) {
     //   this.page = JSON.parse(sessionStorage.getItem(alias));
     // } else {
-      this.http.get(environment.uri + '/' + alias).subscribe(p => {
+      if(alias.length<1){
+        alias = 'divers';
+      }
+      console.log(alias);
+      this.http.get<Array<any>>(environment.uri + '/' + alias).subscribe(p => {
         sessionStorage.setItem(alias, JSON.stringify(p));
-        this.pages = p;
-        console.log("Pages loadées", this.pages);
+        this.page = p;
+        console.log("Pages loadées", this.page);
       });
     // }
   }
+  
   /**
    * Ajouter l'URL aux média pour leur chargement
    * @param m Un média ou une liste de médias

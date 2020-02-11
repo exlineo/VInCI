@@ -6,9 +6,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PagesService {
 
-  constructor(private http:HttpClient) { }
+  constructor() { }
+  open(){
 
-  getPage(id){
+  }
+  close(){
     
   }
 }

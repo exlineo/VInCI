@@ -17,6 +17,6 @@ export class AppComponent {
     // Paramétrer le menu actuel
     this.mServ.getMenu(this.route.url.substr(1,this.route.url.length));
     // Récupérer les données de la page
-    this.mServ.getPage(this.mServ.menu.chemin);
+    // this.mServ.getPage(this.mServ.menu.chemin);
   }
 }

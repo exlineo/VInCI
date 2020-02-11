@@ -8,9 +8,17 @@ import { MenusService } from 'src/app/utils/services/menus.service';
 })
 export class RgpdComponent implements OnInit {
 
-  constructor(public mServ:MenusService) { }
+  constructor(public mServ: MenusService) { }
 
   ngOnInit() {
   }
+  choixRGPD(c: string) {
+    switch (c) {
+      case "analytics":
+        break;
+      case "interaction":
+        break;
 
+    }
+  }
 }

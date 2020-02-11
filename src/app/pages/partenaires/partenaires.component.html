@@ -1,14 +1,16 @@
 <main>
+    
     <section [style.background-color]="mServ.menu.couleurGauche.code" id="map" class="map"></section>
-    <section [style.background-color]="mServ.menu.couleurDroite.code">
-        <article *ngFor="let p of mServ.pages">
-            <h3>{{ p.nom }} ({{ p.acronyme }})</h3>
+    <section [style.background-color]="mServ.menu.couleurDroite.code" class="colonne">
+        <h1>Partenaires</h1>
+        <article *ngFor="let p of mServ.page">
+            <h2>{{ p.nom }} <span *ngIf="p.acronyme">({{ p.acronyme }})</span></h2>
             <ul>
-                <li>Rôle : <em>{{ p.statut }}</em></li>
-                <li>Pays : {{ p.pays }}</li>
-                <li>Groupe de travail impliqués : {{ p.gt }}</li>
+                <li><em>Statut</em> : {{ p.statut }}</li>
+                <li><em>Pays</em> : {{ p.pays }}</li>
+                <li><em>Groupe de travail impliqués</em> : {{ p.gt }}</li>
             </ul>
-            <hr>
+            <span class="separation droite"></span>
         </article>
     </section>
 </main>
