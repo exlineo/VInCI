@@ -2,11 +2,11 @@
     <section [style.background-color]="mServ.menu.couleurGauche.code">
         <h1>{{ mServ.page[0].titre }}</h1>
         <article>
-            <blockquote>{{ mServ.page[0].intro }}</blockquote>
+            <blockquote *ngIf="mServ.page[0].intro">{{ mServ.page[0].intro }}</blockquote>
             <div [innerHtml]="mServ.page[0].contenu | mark"></div>
         </article>
     </section>
     <section [style.background-color]="mServ.menu.couleurDroite.code" [style.background-image]="'url(' + (mServ.menu.medias[0].url | mediaPipe) + ')'">
-        
+
     </section>
 </main>

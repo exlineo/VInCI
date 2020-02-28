@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -24,6 +25,8 @@ import { ToolsService } from './utils/tools.service';
 import { MenusPipe } from './utils/menus.pipe';
 import { MediaPipe } from './utils/media.pipe';
 import { MarkPipe } from './utils/mark.pipe';
+import { PairePipe } from './utils/paire.pipe';
+import { PlusComponent } from './pages/infos/plus/plus.component';
 
 @NgModule({
   declarations: [
@@ -44,10 +47,13 @@ import { MarkPipe } from './utils/mark.pipe';
     SitemapComponent,
     MenusPipe,
     MediaPipe,
-    MarkPipe
+    MarkPipe,
+    PairePipe,
+    PlusComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule
   ],

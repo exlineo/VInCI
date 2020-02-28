@@ -2,30 +2,29 @@
     <section>
         <h1>RGPD</h1>
         <article>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra sem ut consectetur convallis. Aliquam malesuada quam urna. Mauris malesuada tortor sit amet efficitur pharetra. Quisque convallis dignissim metus a facilisis. Nulla vitae dapibus nunc. Pellentesque a nibh magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam quis eros et erat condimentum blandit. Morbi tincidunt posuere mauris, a lacinia nisi condimentum ac.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra sem ut consectetur convallis. Aliquam malesuada quam urna. Mauris malesuada tortor sit amet efficitur pharetra. Quisque convallis dignissim metus a facilisis. Nulla vitae dapibus
+            nunc. Pellentesque a nibh magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam quis eros et erat condimentum blandit. Morbi tincidunt posuere mauris, a lacinia nisi condimentum ac.
         </article>
         <h2>
             Analyse du trafic
         </h2>
         <article>
-            <p>Autorisez-vous l'enregistrement de données d'analyse de votre trafic par Google Analytics (<a
-                href="https://fr.wikipedia.org/wiki/Google_Analytics" title="Plus d'informations sur wikipedia"
-                target="_blank">en savoir plus sur cet outil</a>)</p>
-            <label class="switch" (click)="choix()">
+            <p>Autorisez-vous l'enregistrement de données d'analyse de votre trafic par Google Analytics (<a href="https://fr.wikipedia.org/wiki/Google_Analytics" title="Plus d'informations sur wikipedia" target="_blank">en savoir plus sur cet outil</a>)</p>
+            <label class="switch" (click)="choixRGPD('analytics')">
                 <input type="checkbox">
                 <span class="slider"></span>
             </label>
         </article>
         <article>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra sem ut consectetu</p>
-            <label class="switch">
+            <label class="switch" (click)="choixRGPD('local')">
                 <input type="checkbox">
                 <span class="slider"></span>
             </label>
         </article>
         <article>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra sem ut consectetu</p>
-            <label class="switch" (click)="choix()">
+            <label class="switch" (click)="choixRGPD('interaction')">
                 <input type="checkbox">
                 <span class="slider"></span>
             </label>

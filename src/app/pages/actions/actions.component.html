@@ -1,12 +1,19 @@
 <main>
     <section [style.background-color]="mServ.menu.couleurGauche.code">
         <h1>{{ mServ.menu.titre }}</h1>
-        <article *ngFor="let a of mServ.page">
+        <article *ngFor="let a of mServ.page | paire:'paire'">
             <h2>{{ a.titre }}</h2>
-            <blockquote>{{ a.intro }}</blockquote>
-            <button class="accordeon droite">Lire la suite</button>
-            <div [innerHtml]="a.contenu | mark" class="panneau"></div>
+            <div *ngIf=" a.intro ">{{ a.intro }}</div>
+            <button class="droite " (click)="toolsServ.showArticle(a.contenu)">Lire la suite</button>
         </article>
     </section>
-    <section [style.background-color]="mServ.menu.couleurDroite.code"></section>
+    <section [style.background-color]="mServ.menu.couleurDroite.code">
+        <h1>&nbsp;</h1>
+        <article *ngFor="let a of mServ.page | paire:'impaire'">
+            <h2>{{ a.titre }}</h2>
+            <div *ngIf=" a.intro ">{{ a.intro }}</div>
+            <button class="droite " (click)="toolsServ.showArticle(a.contenu)">Lire la suite</button>
+        </article>
+    </section>
 </main>
+<app-plus [infos]="toolsServ.article" *ngIf="toolsServ.article"></app-plus>

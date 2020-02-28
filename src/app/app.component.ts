@@ -11,12 +11,15 @@ import { MenusService } from './utils/services/menus.service';
 export class AppComponent {
   title = 'Projet VInCI';
 
-  constructor(private route: Router, private mServ: MenusService) { }
+  constructor(private route: Router, private mServ: MenusService) {
+    this.getRoute();
+  }
 
   changeRoute() {
     // Paramétrer le menu actuel
+    this.getRoute();
+  }
+  getRoute(){
     this.mServ.getMenu(this.route.url.substr(1,this.route.url.length));
-    // Récupérer les données de la page
-    // this.mServ.getPage(this.mServ.menu.chemin);
   }
 }

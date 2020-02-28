@@ -6,6 +6,7 @@ import { environment } from '../../../environments/environment';
 
 import { MenuI, LMenus, ImgI } from '../modeles/sets';
 import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class MenusService {
    * Récupérer les menus au démarrage
    * @param http HttpClient
    */
-  constructor(private http: HttpClient, private tServ: Title) {
+  constructor(private http: HttpClient, private tServ: Title, private route: Router) {
     this.getMenus();
     this.langue = this.getLangue() || "fr";
   }
@@ -41,67 +42,71 @@ export class MenusService {
   /**
    * Récupérer les liens et paramètres des menus
    */
-  getMenus() {
-    this.http.get<Array<MenuI>>(environment.uri+'/sitemaps').subscribe(m => {
-      this.menus = m.sort((a, b) => (a.ordre > b.ordre) ? 1 : ((b.ordre > a.ordre) ? -1 : 0));
-      this.menu = this.menus[0];
-      console.log("Menu strapi", m, "Menu sélectionné", this.menu);
-      // this.getMenu("/");
-    });
+  getMenus(alias: string = null) {
+    console.log(this.menus.length);
+    if (this.menus.length <= 1) {
+      this.http.get<Array<MenuI>>(environment.uri + '/sitemaps').subscribe(m => {
+        this.menus = m.sort((a, b) => (a.ordre > b.ordre) ? 1 : ((b.ordre > a.ordre) ? -1 : 0));
+        // this.menu = this.menus[0];
+        this.getMenu(this.route.url.substr(1,this.route.url.length));
+        this.route.navigateByUrl(this.menu.chemin);
+      });
+    }
   }
   /**
    * Récupérer le menu cliquer en fonction de son alias
    * @param { string } alias Alias du menu servant à faire le tri
    */
-  getMenu(alias: string) {
-    console.log(alias);
+  getMenu(alias: string = null) {
     // Lister le menu principal
-    for (let m of this.menus) {
-      console.log(alias == m.chemin);
-      if (alias == m.chemin) {
-        this.menu = m;
-        this.getPage(this.menu.chemin);
-        break;
+    if (alias) {
+      for (let m of this.menus) {
+        if (alias == m.chemin) {
+          this.menu = m;
+          console.log("menu", this.menu);
+          break;
+        }
       }
+    } else {
+      this.menu = this.menus[0];
     }
+    this.getPage(this.menu.chemin);
     /**
      * Changer le titre de la page HTML
      */
     this.tServ.setTitle("VInCI / " + this.menu.titre);
-    console.log(this.menu);
   }
-  /**
-   * Récupérer les pages du site
-   * @param { string } alias Alias du menu servant à faire le tri
-   */
-  getPage(alias: string) {
-    // if (sessionStorage.getItem(alias)) {
-    //   this.page = JSON.parse(sessionStorage.getItem(alias));
-    // } else {
-      if(alias.length<1){
-        alias = 'divers';
-      }
-      console.log(alias);
-      this.http.get<Array<any>>(environment.uri + '/' + alias).subscribe(p => {
-        sessionStorage.setItem(alias, JSON.stringify(p));
-        this.page = p;
-        console.log("Pages loadées", this.page);
-      });
-    // }
+/**
+ * Récupérer les pages du site
+ * @param { string } alias Alias du menu servant à faire le tri
+ */
+getPage(alias: string) {
+  console.log("Alias page", alias);
+  // if (sessionStorage.getItem(alias)) {
+  //   this.page = JSON.parse(sessionStorage.getItem(alias));
+  // } else {
+  if (alias.length < 1) {
+    alias = 'divers';
   }
-  
-  /**
-   * Ajouter l'URL aux média pour leur chargement
-   * @param m Un média ou une liste de médias
-   */
-  setMedias(m:any){
-    console.log("Set medias : ", m);
-    if(typeof m === "object"){
-      m.url = environment.uri + m.url;
-    }else if(Array.isArray(m)){
-      m.forEach(i => {
-        i.url = environment.uri + i.url;
-      })
-    }
+  this.http.get<Array<any>>(environment.uri + '/' + alias).subscribe(p => {
+    sessionStorage.setItem(alias, JSON.stringify(p));
+    console.log("Page", p);
+    this.page = p;
+  });
+  // }
+}
+
+/**
+ * Ajouter l'URL aux média pour leur chargement
+ * @param m Un média ou une liste de médias
+ */
+setMedias(m: any) {
+  if (typeof m === "object") {
+    m.url = environment.uri + m.url;
+  } else if (Array.isArray(m)) {
+    m.forEach(i => {
+      i.url = environment.uri + i.url;
+    })
   }
+}
 }

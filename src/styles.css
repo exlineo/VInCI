@@ -4,10 +4,11 @@ Bleu nuit : #28364A
 Crême : #FFEED6
 Jaune : #F7C45F
 Vert foncé : #2D5C5C
+
+https://any.qodeinteractive.com/split-slider/
 */
 
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Raleway&display=swap');
-
 html,
 body {
     width: 100%;
@@ -15,7 +16,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    font-size:15px;
+    font-size: 15px;
     overflow: hidden;
     background-color: #202A3A;
 }
@@ -35,8 +36,8 @@ main>section {
     padding: 3% 6%;
     background-repeat: no-repeat;
     background-size: auto;
-    background-position:50%;
-    color:white;
+    background-position: 50%;
+    color: white;
     overflow-y: auto;
     box-sizing: border-box;
 }
@@ -49,24 +50,26 @@ main>section:nth-child(1) {
 main>section:nth-child(1) article,
 main>section:nth-child(1) h2,
 main>section:nth-child(1) h3 {
+    /* opacity: 0; 
     animation: .4s slideg;
-    animation-delay: .5s;
+    animation-delay: .5s;*/
 }
 
 main>section:nth-child(2) {
     animation: .4s slideout;
 }
 
-main>section:nth-child(2) article,
 main>section:nth-child(2) h2,
 main>section:nth-child(2) h3 {
-    animation: .4s slided;
-    animation-delay: .5s;
+    /* opacity: 0; 
+    animation: .4s slideg;
+    animation-delay: .5s;*/
 }
 
 article,
 p {
-    animation: .4s slidg;
+    /* animation: .4s slideg;
+    animation-delay: .75s; */
 }
 
 h1,
@@ -76,22 +79,26 @@ h4 {
     font-family: 'Playfair Display', serif;
     font-weight: normal;
 }
-h1{
+
+h1 {
     font-size: 36px;
     text-transform: uppercase;
 }
-blockquote:before{
-    padding-right:10px;
+
+blockquote:before {
+    padding-right: 10px;
     font-family: "Font Awesome 5 Free";
-    content:"\f10d";
-    opacity:.5;
+    content: "\f10d";
+    opacity: .5;
 }
-blockquote:after{
-    padding-left:10px;
+
+blockquote:after {
+    padding-left: 10px;
     font-family: "Font Awesome 5 Free";
-    content:"\f10e";
-    opacity:.5;
+    content: "\f10e";
+    opacity: .5;
 }
+
 a {
     transition: all .3s ease;
     color: white;
@@ -111,45 +118,81 @@ nav a {
 main>section>article {
     box-sizing: border-box;
     padding: 0 50px;
+    display: flex;
+    flex-direction: column;
 }
 
-main>section:nth-child(2) article ul li{
+main>section:nth-child(2) article ul li {
     list-style: circle;
 }
+
+main>section article div {
+    display: block;
+    overflow: hidden;
+}
+
+
 /* SCOLLBARS */
-main>section::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: #F5F5F5;
+
+main>section::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
 }
 
-main>section::-webkit-scrollbar
-{
-	width: 6px;
-	background-color: #F5F5F5;
+main>section::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
 }
 
-main>section::-webkit-scrollbar-thumb
-{
-	background-color: #28364A;
+main>section::-webkit-scrollbar-thumb {
+    background-color: #28364A;
 }
 
-section.colonne article{
-    margin-bottom:20px;
-    width:100%;
+section.colonne article {
+    margin-bottom: 20px;
+    width: 100%;
 }
 
-span.separation{
-    border-bottom:1px dashed rgba(0,0,0,.5);
-    width:75%;
-    margin:0 -50px;
+span.separation {
+    border-bottom: 1px dashed rgba(0, 0, 0, .5);
+    width: 75%;
+    margin: 0 -50px;
 }
-.gauche{
-    float:left;
+
+
+/* CLASSES PERSONNALISATION */
+
+.gauche {
+    float: left;
 }
-.droite{
-    float:right;
+
+.droite {
+    float: right;
 }
+
+.rouge {
+    color: #D65353;
+}
+
+.bleu {
+    color: #28364A;
+}
+
+.creme {
+    color: #FFEED6;
+}
+
+.jaue {
+    color: #F7C45F;
+}
+
+.vert {
+    color: #2D5C5C;
+}
+
+
+/* ANIMATIONS */
+
 @keyframes slidein {
     from {
         margin-top: 100vh;
@@ -175,70 +218,76 @@ span.separation{
 @keyframes slideg {
     from {
         margin-left: -20px;
-        opacity: 0;
+        /* opacity: 0; */
     }
     to {
         margin-left: 0;
-        opacity: 1;
+        /* opacity: 1; */
     }
 }
 
-@keyframes slideg {
+@keyframes slided {
     from {
         margin-right: -20px;
-        opacity: 0;
+        /* opacity: 0; */
     }
     to {
         margin-right: 0;
-        opacity: 1;
+        /* opacity: 1; */
     }
 }
 
-/* COMPOSANTS INTERACTIFS */
-/* ACCORDEON */
-.accordeon {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-  }
-  
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active, .accordeon:hover {
-    background-color: #ccc;
-  }
-  
-  /* Style the accordion panel. Note: hidden by default */
-  .panneau {
-    padding: 0 18px;
-    background-color: white;
-    display: none;
-    overflow: hidden;
-  }
 
-  /* TOGGLE BOUTON */
-  /* The switch - the box around the slider */
+/* FORMULAIRES */
+
+button {
+    background-color: rgba(0, 0, 0, .2);
+    padding: 8px 16px;
+    color: white;
+    margin: 10px 0;
+    transition: background-color .3s ease;
+    border: none;
+    cursor: pointer;
+    width: auto;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, .05);
+    -webkit-filter: contrast(2);
+    filter: contrast(2);
+}
+
+button.gauche {}
+
+
+/* COMPOSANTS INTERACTIFS */
+
+
+/* TOGGLE BOUTON */
+
+
+/* The switch - the box around the slider */
+
 .switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
+}
+
+
+/* Hide default HTML checkbox */
+
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  /* The slider */
-  .slider {
+}
+
+
+/* The slider */
+
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -248,9 +297,9 @@ span.separation{
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  .slider:before {
+}
+
+.slider:before {
     position: absolute;
     content: "";
     height: 26px;
@@ -260,30 +309,32 @@ span.separation{
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  input:checked + .slider {
+}
+
+input:checked+.slider {
     background-color: #D65353;
-  }
-  
-  input:focus + .slider {
+}
+
+input:focus+.slider {
     box-shadow: 0 0 1px #D65353;
-  }
-  
-  input:checked + .slider:before {
+}
+
+input:checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
+}
 
-  /* SIDEBAR */
-  
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* SIDEBAR */
