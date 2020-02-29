@@ -1,4 +1,23 @@
 <main>
-    <section [style.background-color]="mServ.menu.couleurGauche.code"></section>
+    <section [style.background-color]="mServ.menu.couleurGauche.code" class="noir">
+        <h1>{{ mServ.menu.titre }}</h1>
+        <h2>Menu principal</h2>
+        <ul>
+            <li *ngFor="let p of (mServ.menus | menusPipe:'principal')">
+                <a href [routerLink]="p.chemin" [title]="p.titre">
+                    <i [class]="'fas ' + p.icone"></i>{{ p.titre }}
+                </a>
+            </li>
+        </ul>
+        <span class="separation"></span>
+        <h2>Menu secondaire</h2>
+        <ul>
+            <li *ngFor="let m of (mServ.menus | menusPipe:'pied')">
+                <a href [routerLink]="m.chemin" [title]="m.titre">
+                    <i [class]="'fas ' + m.icone"></i>{{ m.titre }}
+                </a>
+            </li>
+        </ul>
+    </section>
     <section [style.background-color]="mServ.menu.couleurDroite.code"></section>
 </main>

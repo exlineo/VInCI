@@ -1,0 +1,12 @@
+section:nth-child(1) ul li a {
+    color: black;
+}
+
+ul li {
+    margin: 15px 0;
+    list-style: none;
+}
+
+ul li i {
+    margin-right: 15px;
+}
