@@ -5,7 +5,9 @@
         <article *ngFor="let a of mServ.page">
             <h2>{{ a.titre }}</h2>
             <blockquote>{{ a.intro }}</blockquote>
-            <div [innerHtml]="a.contenu | mark"></div>
+            <button (click)="toolsServ.showArticle(a.contenu)">En savoir plus</button>
+            <!-- <div [innerHtml]="a.contenu | mark"></div> -->
         </article>
     </section>
 </main>
+<app-plus [infos]="toolsServ.article" *ngIf="toolsServ.article"></app-plus>

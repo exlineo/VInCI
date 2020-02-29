@@ -1,4 +1,11 @@
 <main>
-    <section [style.background-color]="mServ.menu.couleurGauche.code"></section>
-    <section [style.background-color]="mServ.menu.couleurDroite.code"></section>
+    <section [style.background-color]="mServ.menu.couleurGauche.code">
+        <h1>{{ mServ.menu.titre }}</h1>
+        <article *ngFor="let a of mServ.page">
+            <h2>{{ a.titre }}</h2>
+            <blockquote *ngIf=" a.description ">{{ a.description }}</blockquote>
+            <a [href]="a.lien" title="Accéder à la publication" target="_blank" *ngIf="a.lien" class="lien">Plus d'infos</a>
+        </article>
+    </section>
+    <section [style.background-color]="mServ.menu.couleurDroite.code" [style.background-image]="'url(' + (mServ.menu.medias[0].url | mediaPipe) + ')'"></section>
 </main>

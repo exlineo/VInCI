@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { MenusService } from 'src/app/utils/services/menus.service';
 
+import { environment } from '../../../environments/environment';
+
 // Variable pour OpenStreetMap
 declare var ol: any;
 
@@ -10,29 +12,14 @@ declare var ol: any;
   styleUrls: ['./partenaires.component.css']
 })
 export class PartenairesComponent implements OnInit {
-  latitude: number = 42.741;
-  longitude: number = -0.967;
-
-  map: any;
-
+  coord:any
   constructor(public mServ:MenusService) { }
 
   ngOnInit() {
+    this.coord = environment.map.coord;
   }
 
   ngOnAfterInit(){
-    this.map = new ol.Map({
-      target: 'map',
-      layers: [
-        new ol.layer.Tile({
-          source: new ol.source.OSM()
-        })
-      ],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([this.latitude, this.longitude]),
-        zoom: 8
-      })
-    });
   }
 
 }

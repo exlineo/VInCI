@@ -171,23 +171,27 @@ span.separation {
 }
 
 .rouge {
-    color: #D65353;
+    background-color: #D65353;
 }
 
 .bleu {
-    color: #28364A;
+    background-color: #28364A;
 }
 
 .creme {
-    color: #FFEED6;
+    background-color: #FFEED6;
 }
 
-.jaue {
-    color: #F7C45F;
+.jaune {
+    background-color: #F7C45F;
 }
 
 .vert {
-    color: #2D5C5C;
+    background-color: #2D5C5C;
+}
+
+.lien {
+    align-self: flex-end;
 }
 
 
@@ -242,13 +246,14 @@ span.separation {
 
 button {
     background-color: rgba(0, 0, 0, .2);
-    padding: 8px 16px;
+    padding: 12px 20px;
     color: white;
     margin: 10px 0;
     transition: background-color .3s ease;
     border: none;
     cursor: pointer;
     width: auto;
+    align-self: flex-end;
 }
 
 button:hover {
@@ -256,8 +261,6 @@ button:hover {
     -webkit-filter: contrast(2);
     filter: contrast(2);
 }
-
-button.gauche {}
 
 
 /* COMPOSANTS INTERACTIFS */
@@ -309,6 +312,53 @@ button.gauche {}
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
+}
+
+form,
+label {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 10px 0;
+}
+
+input,
+textarea {
+    padding: 12px;
+    margin: 10px;
+    border: 1px solid rgba(0, 0, 0, .5);
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+}
+
+textarea {
+    min-height: 150px;
+}
+
+form label>span {
+    width: 100%;
+    font-style: italic;
+    text-align: right;
+}
+
+form>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+form input[type="submit"],
+form input[type="reset"] {
+    max-width: 200px;
+    border: 0;
+    padding: 8px 16px;
+    opacity: .8;
+    transition: opacity .3s ease;
+    color: white;
+}
+
+form input[type="submit"],
+:hover form input[type="reset"]:hover {
+    opacity: 1;
 }
 
 input:checked+.slider {

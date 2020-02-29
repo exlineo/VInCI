@@ -1,19 +1,13 @@
 <main>
     <section [style.background-color]="mServ.menu.couleurGauche.code">
         <h1>{{ mServ.menu.titre }}</h1>
-        <article *ngFor="let a of mServ.page | paire:'paire'">
+        <article *ngFor="let a of mServ.page">
             <h2>{{ a.titre }}</h2>
-            <div *ngIf=" a.intro ">{{ a.intro }}</div>
-            <button class="droite " (click)="toolsServ.showArticle(a.contenu)">Lire la suite</button>
+            <blockquote *ngIf=" a.intro ">{{ a.intro }}</blockquote>
+            <button (click)="toolsServ.showArticle(a.contenu)">Lire la suite</button>
         </article>
     </section>
-    <section [style.background-color]="mServ.menu.couleurDroite.code">
-        <h1>&nbsp;</h1>
-        <article *ngFor="let a of mServ.page | paire:'impaire'">
-            <h2>{{ a.titre }}</h2>
-            <div *ngIf=" a.intro ">{{ a.intro }}</div>
-            <button class="droite " (click)="toolsServ.showArticle(a.contenu)">Lire la suite</button>
-        </article>
+    <section [style.background-color]="mServ.menu.couleurDroite.code" [style.background-image]="'url(' + (mServ.menu.medias[0].url | mediaPipe) + ')'">
     </section>
 </main>
 <app-plus [infos]="toolsServ.article" *ngIf="toolsServ.article"></app-plus>

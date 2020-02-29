@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenusService } from 'src/app/utils/services/menus.service';
+import { ToolsService } from 'src/app/utils/tools.service';
 
 @Component({
   selector: 'app-publications',
@@ -8,7 +9,7 @@ import { MenusService } from 'src/app/utils/services/menus.service';
 })
 export class PublicationsComponent implements OnInit {
 
-  constructor(public mServ:MenusService) { }
+  constructor(public mServ:MenusService, public toolsServ:ToolsService) { }
 
   ngOnInit() {
   }

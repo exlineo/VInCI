@@ -4,7 +4,36 @@
 
 export const environment = {
   production: false,
-  uri:'http://adminvinci.exlineo.com'
+  uri: 'http://adminvinci.exlineo.com',
+  map: {
+    api: "",
+    coord: { lat: 43.761558, long: -2.133068, zoom: 6 }
+  },
+  particles: {
+    style: {
+      'position': 'fixed',
+      'width': '100%',
+      'height': '100%',
+      'z-index': -1,
+      'top': 0,
+      'left': 0,
+      'right': 0,
+      'bottom': 0,
+    },
+    params: {
+      particles: {
+        number: {
+          value: 200,
+        },
+        color: {
+          value: '#FFFFFF'
+        },
+        shape: {
+          type: 'triangle',
+        },
+      }
+    }
+  }
 };
 
 /*

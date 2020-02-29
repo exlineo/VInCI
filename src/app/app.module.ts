@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +30,9 @@ import { MediaPipe } from './utils/media.pipe';
 import { MarkPipe } from './utils/mark.pipe';
 import { PairePipe } from './utils/paire.pipe';
 import { PlusComponent } from './pages/infos/plus/plus.component';
+
+import { environment } from '../environments/environment';
+import { ParticlesModule } from 'angular-particle';
 
 @NgModule({
   declarations: [
@@ -55,7 +61,15 @@ import { PlusComponent } from './pages/infos/plus/plus.component';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.map.api,
+      libraries: ["places"]
+      /* apiKey is required, unless you are a premium customer, in which case you can use clientId */
+    })
+    // ,
+    // ParticlesModule
   ],
   providers: [MenusService, ToolsService],
   bootstrap: [AppComponent]

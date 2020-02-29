@@ -17,10 +17,10 @@ const routes: Routes = [
   {path:'vincis', component:ProjetComponent},
   {path:'actions', component:ActionsComponent},
   {path:'partenaires', component:PartenairesComponent},
-  {path:'publication', component:PublicationsComponent},
+  {path:'publications', component:PublicationsComponent},
   {path:'actualites', component:NewsComponent},
-  {path:'contact', component:ContactComponent},
-  {path:'sitemap', component:SitemapComponent},
+  {path:'contacts', component:ContactComponent},
+  {path:'sitemaps', component:SitemapComponent},
   {path:'rgpd', component:RgpdComponent},
   {path:'mentions', component:MentionsComponent},
   { path: '**', component:Erreur404Component }

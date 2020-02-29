@@ -1,6 +1,9 @@
 <main>
-    
-    <section [style.background-color]="mServ.menu.couleurGauche.code" id="map" class="map"></section>
+
+    <section [style.background-color]="mServ.menu.couleurGauche.code" id="map" class="map">
+        <agm-map [latitude]="coord.lat" [longitude]="coord.long" [zoom]="coord.zoom"></agm-map>
+    </section>
+
     <section [style.background-color]="mServ.menu.couleurDroite.code" class="colonne">
         <h1>Partenaires</h1>
         <article *ngFor="let p of mServ.page">
@@ -10,7 +13,7 @@
                 <li><em>Pays</em> : {{ p.pays }}</li>
                 <li><em>Groupe de travail impliqués</em> : {{ p.gt }}</li>
             </ul>
-            <span class="separation droite"></span>
+            <span class="separation"></span>
         </article>
     </section>
 </main>
