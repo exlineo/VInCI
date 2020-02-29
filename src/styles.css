@@ -325,9 +325,25 @@ input,
 textarea {
     padding: 12px;
     margin: 10px;
-    border: 1px solid rgba(0, 0, 0, .5);
+    /* border: 1px solid rgba(0, 0, 0, .5); */
+    border: 0;
     font-family: 'Raleway', sans-serif;
     cursor: pointer;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #28364A;
+}
+
+input.ng-invalid,
+textarea.ng-invalid {
+    border-bottom: 1px solid #D65353;
+}
+
+input.ng-valid,
+textarea.ng-valid {
+    border-bottom: 1px solid #2D5C5C;
 }
 
 textarea {
