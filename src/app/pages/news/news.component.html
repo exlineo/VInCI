@@ -5,6 +5,7 @@
         <article *ngFor="let a of mServ.pages[mServ.menu.chemin] | lang:mServ.langue">
             <h2>{{ a.titre }}</h2>
             <blockquote *ngIf=" a.intro ">{{ a.intro }}</blockquote>
+            <p class="cache">{{ a.contenu }}</p>
             <a [href]="a.lien" title="Aller sur le site Internet" target="_blank" *ngIf="a.lien" class="lien">Plus d'infos</a>
             <button (click)="toolsServ.showArticle(a.contenu)" *ngIf="a.contenu">Lire la suite</button>
         </article>

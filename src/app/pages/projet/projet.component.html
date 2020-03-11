@@ -5,6 +5,8 @@
         <article *ngFor="let a of mServ.pages[mServ.menu.chemin] | lang:mServ.langue">
             <h2>{{ a.titre }}</h2>
             <blockquote>{{ a.intro }}</blockquote>
+            <p class="cache">{{ a.contenu }}</p>
+
             <button (click)="toolsServ.showArticle(a.contenu)">En savoir plus</button>
             <!-- <div [innerHtml]="a.contenu | mark"></div> -->
         </article>

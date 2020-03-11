@@ -4,6 +4,7 @@
         <article *ngFor="let a of mServ.pages[mServ.menu.chemin] | lang:mServ.langue">
             <h2>{{ a.titre }}</h2>
             <blockquote *ngIf=" a.intro ">{{ a.intro }}</blockquote>
+            <p class="cache">{{ a.contenu }}</p>
             <button (click)="toolsServ.showArticle(a.contenu)">Lire la suite</button>
         </article>
     </section>
