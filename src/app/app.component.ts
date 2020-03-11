@@ -11,7 +11,7 @@ import { MenusService } from './utils/services/menus.service';
 export class AppComponent {
   title = 'Projet VInCI';
 
-  constructor(private route: Router, private mServ: MenusService) {
+  constructor(private route: Router, public mServ: MenusService) {
     this.getRoute();
   }
 
@@ -20,6 +20,7 @@ export class AppComponent {
     this.getRoute();
   }
   getRoute(){
+    console.log("Chemin URL", this.route.url.substr(1,this.route.url.length));
     this.mServ.getMenu(this.route.url.substr(1,this.route.url.length));
   }
 }

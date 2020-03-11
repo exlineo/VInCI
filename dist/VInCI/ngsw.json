@@ -1,0 +1,137 @@
+{
+  "configVersion": 1,
+  "timestamp": 1583951199194,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main-es2015.b574a84fe353c44c66f4.js",
+        "/main-es5.b574a84fe353c44c66f4.js",
+        "/manifest.webmanifest",
+        "/polyfills-es2015.ca64e4516afbb1b890d5.js",
+        "/polyfills-es5.fb4cff7f451982eaa677.js",
+        "/runtime-es2015.0811dcefd377500b5b1a.js",
+        "/runtime-es5.0811dcefd377500b5b1a.js",
+        "/styles.cde9c2de2c97292dad5d.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/data/menus.json",
+        "/assets/data/pages.json",
+        "/assets/data/pages/fr/accueil.json",
+        "/assets/data/pages/fr/actions.json",
+        "/assets/data/pages/fr/actualites.json",
+        "/assets/data/pages/fr/contact.json",
+        "/assets/data/pages/fr/mentions.json",
+        "/assets/data/pages/fr/partenaires.json",
+        "/assets/data/pages/fr/projet.json",
+        "/assets/data/pages/fr/publications.json",
+        "/assets/data/pages/fr/sitemap.json",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/images/Logo_VinCi_nb_web.png",
+        "/assets/images/es.png",
+        "/assets/images/fr.png",
+        "/assets/images/loader.gif",
+        "/assets/images/loader_1.gif",
+        "/assets/images/loader_organique.gif",
+        "/assets/images/logos/Logo_VinCi_nb_web.png",
+        "/assets/images/logos/Logo_VinCi_nb_web.svg",
+        "/assets/images/logos/Logo_VinCi_web.png",
+        "/assets/images/logos/Logo_VinCi_web.svg",
+        "/assets/images/pt.png",
+        "/assets/particles.min.js"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "VInCIRest",
+      "patterns": [
+        "http:\\/\\/adminvinci\\.exlieo\\.com\\/[^/]*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 3,
+      "maxAge": 1814400000,
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/assets/data/menus.json": "0a4aa5a54a10f5afc1ed4c63263d3997040a6c04",
+    "/assets/data/pages.json": "ef2f469d7135de586819d2a15ccca0c8fd4f0c39",
+    "/assets/data/pages/fr/accueil.json": "c6da298d4a03b1f7579990bda63535ecc1636428",
+    "/assets/data/pages/fr/actions.json": "c6da298d4a03b1f7579990bda63535ecc1636428",
+    "/assets/data/pages/fr/actualites.json": "c6da298d4a03b1f7579990bda63535ecc1636428",
+    "/assets/data/pages/fr/contact.json": "c6da298d4a03b1f7579990bda63535ecc1636428",
+    "/assets/data/pages/fr/mentions.json": "c6da298d4a03b1f7579990bda63535ecc1636428",
+    "/assets/data/pages/fr/partenaires.json": "c6da298d4a03b1f7579990bda63535ecc1636428",
+    "/assets/data/pages/fr/projet.json": "c6da298d4a03b1f7579990bda63535ecc1636428",
+    "/assets/data/pages/fr/publications.json": "c6da298d4a03b1f7579990bda63535ecc1636428",
+    "/assets/data/pages/fr/sitemap.json": "c6da298d4a03b1f7579990bda63535ecc1636428",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/images/Logo_VinCi_nb_web.png": "9a4c668ea103eaf1d16e2c90b3e4080576dfb191",
+    "/assets/images/es.png": "f86370402a8d5b7789d9b67851621cb5b07b9798",
+    "/assets/images/fr.png": "a83cfc960ee542dd2b5561d7064d7d03e45e4c0d",
+    "/assets/images/loader.gif": "d44378edbae0a0d1d6f62380e9ca48c976b8189d",
+    "/assets/images/loader_1.gif": "adbc0a597e585a5dae6e01f5082fd16a65557d1c",
+    "/assets/images/loader_organique.gif": "55f48b8ddd67dc94eebbf7b0032dc6ba7ccbf871",
+    "/assets/images/logos/Logo_VinCi_nb_web.png": "4e4d79a7ec4cde5527d4624f8adf2e0e3600f14c",
+    "/assets/images/logos/Logo_VinCi_nb_web.svg": "51f8dd5c90ab09a83fec46e0e3bb81a604e9e8eb",
+    "/assets/images/logos/Logo_VinCi_web.png": "5390c784ba2a149917d31ed563d1a1053991f63f",
+    "/assets/images/logos/Logo_VinCi_web.svg": "c3dd15db6630d009c83fdd0609f4a206a7e09b9c",
+    "/assets/images/pt.png": "82bebe227fb9ca1ab6890d022da344b78131b0fa",
+    "/assets/particles.min.js": "8017f8b1869077db728573f1ca4684a00af69462",
+    "/favicon.ico": "02c50deaadcbb508e0ee7844299030a59f1af2c3",
+    "/index.html": "6c49a9fd5d46c0ebd4892eeb67203e29ad032610",
+    "/main-es2015.b574a84fe353c44c66f4.js": "081e37d1c16a9d578ebb18134bf17a9d5fb613b6",
+    "/main-es5.b574a84fe353c44c66f4.js": "5b8e21569485fc938450262156b0c15a98f1732d",
+    "/manifest.webmanifest": "29fe2873d75bf70d8886ff8f749459dbc10509dd",
+    "/polyfills-es2015.ca64e4516afbb1b890d5.js": "8779ed8d9bf0580e1b50b352a9b8fd520be24433",
+    "/polyfills-es5.fb4cff7f451982eaa677.js": "d5158605c08abe16a3992ccf4604bf8d2a934964",
+    "/runtime-es2015.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/runtime-es5.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/styles.cde9c2de2c97292dad5d.css": "57f24cb284aeb82d9517915970ae548b93e9e474"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

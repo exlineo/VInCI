@@ -1,34 +1,34 @@
 <main>
-    <section [style.background-color]="mServ.menu.couleurGauche.code">
+    <section [style.background-color]="mServ.menu.couleurGauche.code" class="contenu">
         <h1>{{ mServ.menu.titre }}</h1>
         <form #f="ngForm">
             <label>
                 Votre nom* :
                 <input name="nom" type="text" [(ngModel)]="contact.nom" required #nom="ngModel" placeholder="Merci de renseigner votre nom">
-                <span *ngIf="nom.pristine || nom.hasError('required')">Avez-vous un nom ?</span>
+                <span *ngIf="nom.pristine || nom.hasError('required')">{{ mServ.getTraduction('messagenom') }}</span>
             </label>
             <label>
                 votre e-mail* :
                 <input name="mail" type="email" [(ngModel)]="contact.mail" required #mail="ngModel" placeholder="Merci de renseigner un email">
-                <span *ngIf="mail.invalid && (mail.dirty || mail.touched)">Le format de votre e-mail semble incorrect</span>
-                <span *ngIf="mail.pristine || mail.hasError('required')">Merci de saisir un e-mail</span>
+                <span *ngIf="mail.invalid && (mail.dirty || mail.touched)">{{ mServ.getTraduction('erreuremail') }}</span>
+                <span *ngIf="mail.pristine || mail.hasError('required')">{{ mServ.getTraduction('messageemail') }}</span>
             </label>
             <label>
                 Sujet de votre message
                 <input name="sujet" type="text" [(ngModel)]="contact.sujet" #sujet="ngModel" required placeholder="De quoi voudriez-vous nous parler ?">
-                <span *ngIf="sujet.pristine || sujet.hasError('required')">Merci de saisir un sujet</span>
+                <span *ngIf="sujet.pristine || sujet.hasError('required')">{{ mServ.getTraduction('messagesujet') }}</span>
             </label>
             <label>
                 Votre message* :
                 <textarea name="message" required #message="ngModel" [(ngModel)]="contact.message"  placeholder="Merci pour votre message"></textarea>
-                <span *ngIf="message.pristine || message.hasError('required')">Votre message devrait contenir un message</span>
+                <span *ngIf="message.pristine || message.hasError('required')">{{ mServ.getTraduction('erreurcontenu') }}</span>
             </label>
             <div>
-                <input type="submit" value="ENVOYER" (click)="envoyer()" [disabled]="f.invalid" class="vert">
-                <input type="reset" value="ANNULER" class="rouge">
+                <input type="submit" [value]="mServ.getTraduction('envoyer')" (click)="envoyer()" [disabled]="f.invalid" class="vert">
+                <input type="reset" [value]="mServ.getTraduction('annuler')" class="rouge">
             </div>
 
         </form>
     </section>
-    <section [style.background-color]="mServ.menu.couleurDroite.code" [style.background-image]="'url(' + (mServ.menu.medias[0].url | mediaPipe) + ')'"></section>
+    <section [style.background-color]="mServ.menu.couleurDroite.code" [style.background-image]="'url(' + (mServ.menu.medias[0].url | mediaPipe) + ')'" class="img"></section>
 </main>

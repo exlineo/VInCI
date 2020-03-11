@@ -12,7 +12,7 @@ export class ProjetComponent implements OnInit {
   constructor(public mServ:MenusService, public toolsServ:ToolsService) { }
 
   ngOnInit() {
-    console.log(this.mServ.menu);
+    console.log("Depuis projet", this.mServ.menu);
   }
 
 }

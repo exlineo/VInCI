@@ -1,12 +1,12 @@
 <main>
-    <section [style.background-color]="mServ.menu.couleurGauche.code">
-        <h1>{{ mServ.page[0].titre }}</h1>
-        <article>
-            <blockquote *ngIf="mServ.page[0].intro">{{ mServ.page[0].intro }}</blockquote>
-            <div [innerHtml]="mServ.page[0].contenu | mark"></div>
+    <section [style.background-color]="mServ.menu.couleurGauche.code" class="contenu">
+        <h1>{{ mServ.menu.titre }}</h1>
+        <article *ngFor="let a of mServ.pages[mServ.menu.chemin] | lang:mServ.langue">
+            <blockquote *ngIf="a.intro">{{ a.intro }}</blockquote>
+            <div [innerHtml]="a.contenu | mark"></div>
         </article>
     </section>
-    <section [style.background-color]="mServ.menu.couleurDroite.code" [style.background-image]="'url(' + (mServ.menu.medias[0].url | mediaPipe) + ')'">
+    <section [style.background-color]="mServ.menu.couleurDroite.code" [style.background-image]="'url(' + (mServ.menu.medias[0].url | mediaPipe) + ')'" class="img">
         <!-- <particles [style]="particules.style" [params]="particules.params"></particles> -->
     </section>
 </main>

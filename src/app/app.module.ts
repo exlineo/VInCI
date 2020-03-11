@@ -27,12 +27,13 @@ import { ToolsService } from './utils/tools.service';
 
 import { MenusPipe } from './utils/menus.pipe';
 import { MediaPipe } from './utils/media.pipe';
-import { MarkPipe } from './utils/mark.pipe';
+import { MarkPipe, LangPipe } from './utils/mark.pipe';
 import { PairePipe } from './utils/paire.pipe';
 import { PlusComponent } from './pages/infos/plus/plus.component';
 
 import { environment } from '../environments/environment';
 import { ParticlesModule } from 'angular-particle';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { ParticlesModule } from 'angular-particle';
     MenusPipe,
     MediaPipe,
     MarkPipe,
+    LangPipe,
     PairePipe,
     PlusComponent
   ],
@@ -67,7 +69,8 @@ import { ParticlesModule } from 'angular-particle';
       apiKey: environment.map.api,
       libraries: ["places"]
       /* apiKey is required, unless you are a premium customer, in which case you can use clientId */
-    })
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     // ,
     // ParticlesModule
   ],

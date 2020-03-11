@@ -14,7 +14,6 @@ export class MediaPipe implements PipeTransform {
   public transform(str: string): string {
     if (!str || !str.length) return '';
     str = environment.uri + str;
-    console.log(str);
     // Filtrer le tableau fourni en gérant la casse
     return str;
   }
