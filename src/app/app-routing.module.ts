@@ -11,6 +11,7 @@ import { Erreur404Component } from './pages/erreur404/erreur404.component';
 import { SitemapComponent } from './pages/infos/sitemap/sitemap.component';
 import { RgpdComponent } from './pages/infos/rgpd/rgpd.component';
 import { MentionsComponent } from './pages/infos/mentions/mentions.component';
+import { ConnexionComponent } from './pages/connexion/connexion.component';
 
 const routes: Routes = [
   {path:'', component:AccueilComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'sitemaps', component:SitemapComponent},
   {path:'rgpd', component:RgpdComponent},
   {path:'mentions', component:MentionsComponent},
+  {path:'connexion', component:ConnexionComponent},
   { path: '**', component:Erreur404Component }
 ];
 

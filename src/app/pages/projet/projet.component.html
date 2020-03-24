@@ -1,7 +1,7 @@
 <main>
     <section [style.background-color]="mServ.menu.couleurGauche.code" [style.background-image]="'url(' + (mServ.menu.medias[0].url | mediaPipe) + ')'" class="img"></section>
     <section [style.background-color]="mServ.menu.couleurDroite.code" class="contenu">
-        <h1>{{ mServ.menu.titre }}</h1>
+        <h1>{{ mServ.menu['titre_'+mServ.langue] }}</h1>
         <article *ngFor="let a of mServ.pages[mServ.menu.chemin] | lang:mServ.langue">
             <h2>{{ a.titre }}</h2>
             <blockquote>{{ a.intro }}</blockquote>

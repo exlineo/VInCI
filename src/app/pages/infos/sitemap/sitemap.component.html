@@ -1,6 +1,6 @@
 <main>
     <section [style.background-color]="mServ.menu.couleurGauche.code" class="noir">
-        <h1>{{ mServ.menu.titre }}</h1>
+        <h1>{{ mServ.menu['titre_'+mServ.langue] }}</h1>
         <h2>Menu principal</h2>
         <ul>
             <li *ngFor="let p of (mServ.menus | menusPipe:'principal')">

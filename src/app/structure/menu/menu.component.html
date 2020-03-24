@@ -1,5 +1,6 @@
 <header class="logo">
     <div>
+        <img src="assets/images/uk.png" (click)="mServ.setLangue('en')">
         <img src="assets/images/es.png" (click)="mServ.setLangue('es')">
         <img src="assets/images/fr.png" (click)="mServ.setLangue('fr')">
         <img src="assets/images/pt.png" (click)="mServ.setLangue('pt')">
@@ -8,22 +9,22 @@
         <img src="assets/images/Logo_VinCi_nb_web.png" title="Projet VInCI" alt="Logo du projet VInCI" />
     </a>
 
-<nav>
-<ul>
-    <li *ngFor="let m of (mServ.menus | menusPipe:'principal' | slice:1)">
-        <a href [routerLink]="m.chemin" [title]="m.titre">
-            <i [class]="'fas ' + m.icone"></i>{{ m.titre }}
-        </a>
-    </li>
-</ul>
-</nav>
+    <nav>
+        <ul>
+            <li *ngFor="let m of (mServ.menus | menusPipe:'principal' | slice:1)">
+                <a href [routerLink]="m.chemin" [title]="m['titre_'+mServ.langue]">
+                    <i [class]="'fas ' + m.icone"></i>{{ m['titre_'+mServ.langue] }}
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
 <nav>
-<ul>
-    <li *ngFor="let p of (mServ.menus | menusPipe:'pied')">
-        <a href [routerLink]="p.chemin" [title]="p.titre">
-            <i [class]="'fas ' + p.icone"></i>
-        </a>
-    </li>
-</ul>
+    <ul>
+        <li *ngFor="let p of (mServ.menus | menusPipe:'pied' | lang:mServ.langue)">
+            <a href [routerLink]="p.chemin" [title]="p.titre">
+                <i [class]="'fas ' + p.icone"></i>
+            </a>
+        </li>
+    </ul>
 </nav>

@@ -1,3 +1,12 @@
-<p>
-  connexion works!
-</p>
+<main>
+    <section>
+        <H1>Identification</H1>
+        <blockquote>L'accès au site Internet est limité, merci de vous identifier</blockquote>
+        <form (submit)="connexion()">
+            <input name="id" [(ngModel)]="conne.id" placeholder="Identifant">
+            <input name="pwd" type="password" [(ngModel)]="conne.pwd" placeholder="Mot de passe">
+            <input type="submit" value="CONNEXION" class="vert">
+            <input type="reset" value="ANNULER" class="rouge">
+        </form>
+    </section>
+</main>

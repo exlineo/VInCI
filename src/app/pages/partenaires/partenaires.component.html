@@ -5,7 +5,7 @@
     </section>
 
     <section [style.background-color]="mServ.menu.couleurDroite.code" class="colonne">
-        <h1>Partenaires</h1>
+        <h1>{{ mServ.menu['titre_'+mServ.langue] }}</h1>
         <article *ngFor="let p of mServ.pages[mServ.menu.chemin] | lang:mServ.langue">
             <h2>{{ p.nom }} <span *ngIf="p.acronyme">({{ p.acronyme }})</span></h2>
             <ul>

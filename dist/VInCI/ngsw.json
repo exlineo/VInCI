@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1583951199194,
+  "timestamp": 1584055858018,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -10,14 +10,14 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main-es2015.b574a84fe353c44c66f4.js",
-        "/main-es5.b574a84fe353c44c66f4.js",
+        "/main-es2015.feac3e115000b4f7f39f.js",
+        "/main-es5.feac3e115000b4f7f39f.js",
         "/manifest.webmanifest",
         "/polyfills-es2015.ca64e4516afbb1b890d5.js",
         "/polyfills-es5.fb4cff7f451982eaa677.js",
         "/runtime-es2015.0811dcefd377500b5b1a.js",
         "/runtime-es5.0811dcefd377500b5b1a.js",
-        "/styles.cde9c2de2c97292dad5d.css"
+        "/styles.1831f3c55841077db142.css"
       ],
       "patterns": []
     },
@@ -37,6 +37,7 @@
         "/assets/data/pages/fr/projet.json",
         "/assets/data/pages/fr/publications.json",
         "/assets/data/pages/fr/sitemap.json",
+        "/assets/data/prod.json",
         "/assets/icons/icon-128x128.png",
         "/assets/icons/icon-144x144.png",
         "/assets/icons/icon-152x152.png",
@@ -56,6 +57,7 @@
         "/assets/images/logos/Logo_VinCi_web.png",
         "/assets/images/logos/Logo_VinCi_web.svg",
         "/assets/images/pt.png",
+        "/assets/images/uk.png",
         "/assets/particles.min.js"
       ],
       "patterns": []
@@ -85,6 +87,7 @@
     "/assets/data/pages/fr/projet.json": "c6da298d4a03b1f7579990bda63535ecc1636428",
     "/assets/data/pages/fr/publications.json": "c6da298d4a03b1f7579990bda63535ecc1636428",
     "/assets/data/pages/fr/sitemap.json": "c6da298d4a03b1f7579990bda63535ecc1636428",
+    "/assets/data/prod.json": "3bac7096fb841d2504d587996acc8ed717e8d6f7",
     "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
     "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
@@ -104,17 +107,18 @@
     "/assets/images/logos/Logo_VinCi_web.png": "5390c784ba2a149917d31ed563d1a1053991f63f",
     "/assets/images/logos/Logo_VinCi_web.svg": "c3dd15db6630d009c83fdd0609f4a206a7e09b9c",
     "/assets/images/pt.png": "82bebe227fb9ca1ab6890d022da344b78131b0fa",
+    "/assets/images/uk.png": "2ff67294111a5a79c4c781e4c631bf14713176f2",
     "/assets/particles.min.js": "8017f8b1869077db728573f1ca4684a00af69462",
     "/favicon.ico": "02c50deaadcbb508e0ee7844299030a59f1af2c3",
-    "/index.html": "6c49a9fd5d46c0ebd4892eeb67203e29ad032610",
-    "/main-es2015.b574a84fe353c44c66f4.js": "081e37d1c16a9d578ebb18134bf17a9d5fb613b6",
-    "/main-es5.b574a84fe353c44c66f4.js": "5b8e21569485fc938450262156b0c15a98f1732d",
+    "/index.html": "8cd48ac78c9ad45c3163a15c26627aae1cdb023f",
+    "/main-es2015.feac3e115000b4f7f39f.js": "74e5869ebfd61242629c0f75c05d6024caadb02f",
+    "/main-es5.feac3e115000b4f7f39f.js": "3c1887d14d948bacd15ed91fe1cdf92c58b2a8f6",
     "/manifest.webmanifest": "29fe2873d75bf70d8886ff8f749459dbc10509dd",
     "/polyfills-es2015.ca64e4516afbb1b890d5.js": "8779ed8d9bf0580e1b50b352a9b8fd520be24433",
     "/polyfills-es5.fb4cff7f451982eaa677.js": "d5158605c08abe16a3992ccf4604bf8d2a934964",
     "/runtime-es2015.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/runtime-es5.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/styles.cde9c2de2c97292dad5d.css": "57f24cb284aeb82d9517915970ae548b93e9e474"
+    "/styles.1831f3c55841077db142.css": "e43f171988bec8d64a7b698c46ca597af86367e5"
   },
   "navigationUrls": [
     {

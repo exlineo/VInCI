@@ -17,6 +17,7 @@ export class MenusService {
   page: Array<any> = [new Object()]; // Page actuelle
   pages: any;
   traductions: Array<any> = [new Object()];
+  maintenance:boolean;
 
   langue: string; // Langue de l'utilisateur
   /**
@@ -24,9 +25,20 @@ export class MenusService {
    * @param http HttpClient
    */
   constructor(private http: HttpClient, private tServ: Title, private route: Router, private zone:NgZone) {
+    this.checkProd(); // Vérifier si nous sommes en production ou non
     this.pages = new Object();
-    this.getMenus();
-    this.langue = this.getLangue() || "fr";
+    this.getMenus(); // Obtenir la liste des éléments du menu
+    this.langue = this.getLangue(); // Définir la langue intiale
+  }
+  /**
+   * Check prod
+   */
+  checkProd(){
+    this.http.get('assets/data/prod.json').subscribe(
+      p => {
+        this.maintenance = p['MAINTENANCE'];
+      }
+    );
   }
   /**
    * Récupérer les traductions des éléments du site (formulaire notamment)
@@ -47,10 +59,14 @@ export class MenusService {
     };
   }
   /**
-   * Obtenir la langue local de l'utilsateur
+   * Obtenir la langue locale de l'utilsateur
    */
   getLangue(): string {
-    return localStorage.getItem("langue");
+    if(localStorage.getItem("langue")){
+      return localStorage.getItem("langue");
+    }else{
+      return "fr";
+    }
   }
   /**
    * Paramètrer la langue locale de l'utilisateur
@@ -91,17 +107,18 @@ export class MenusService {
     /**
      * Changer le titre de la page HTML
      */
-    this.tServ.setTitle("VInCI / " + this.menu.titre);
+    console.log('titre_'+this.langue, this.menu['titre_'+this.langue]);
+    this.tServ.setTitle("VInCI / " + this.menu['titre_'+this.langue]);
   }
   /**
    * Récupérer les pages du site
    * @param { string } alias Alias du menu servant à faire le tri
    */
   getPage(alias: string) {
+    console.log("Get page");
     if (!this.pages.hasOwnProperty(alias)) {
       this.http.get<Array<any>>(environment.uri + '/' + alias).subscribe(p => {
         this.pages[this.menu.chemin] = p;
-
         document.getElementById("loader").classList.add('cache');
       });
     }else{

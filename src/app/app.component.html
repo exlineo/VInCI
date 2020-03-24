@@ -2,3 +2,4 @@
     <app-menu></app-menu>
 </section>
 <router-outlet (activate)="changeRoute()"></router-outlet>
+<app-connexion *ngIf="mServ.maintenance"></app-connexion>

@@ -1,0 +1,20 @@
+main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #28364A;
+    z-index: 102;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+form {
+    margin: auto;
+}
