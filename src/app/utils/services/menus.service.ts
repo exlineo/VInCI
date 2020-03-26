@@ -18,6 +18,7 @@ export class MenusService {
   pages: any;
   traductions: Array<any> = [new Object()];
   maintenance:boolean;
+  rgpd:boolean; // Modifier la règle RGPD pour récupérer les statistiques
 
   langue: string; // Langue de l'utilisateur
   /**
@@ -28,7 +29,8 @@ export class MenusService {
     this.checkProd(); // Vérifier si nous sommes en production ou non
     this.pages = new Object();
     this.getMenus(); // Obtenir la liste des éléments du menu
-    this.langue = this.getLangue(); // Définir la langue intiale
+    this.getLangue() ? this.langue = this.getLangue() : this.langue = "fr";
+    localStorage.getItem('rgpd') ? this.rgpd = eval(localStorage.getItem('rgpd')) : this.rgpd = true;
   }
   /**
    * Check prod
@@ -62,11 +64,7 @@ export class MenusService {
    * Obtenir la langue locale de l'utilsateur
    */
   getLangue(): string {
-    if(localStorage.getItem("langue")){
-      return localStorage.getItem("langue");
-    }else{
-      return "fr";
-    }
+    return localStorage.getItem("langue");
   }
   /**
    * Paramètrer la langue locale de l'utilisateur
@@ -84,7 +82,6 @@ export class MenusService {
       this.http.get<Array<MenuI>>(environment.uri + '/sitemaps').subscribe(m => {
         this.menus = m.sort((a, b) => (a.ordre > b.ordre) ? 1 : ((b.ordre > a.ordre) ? -1 : 0));
         this.getMenu(this.route.url.substr(1, this.route.url.length));
-        // this.route.navigateByUrl(this.menu.chemin);
       });
     }
     // Récupérer la liste des traductions
@@ -103,11 +100,12 @@ export class MenusService {
           break;
         }
       }
+      
     this.getPage(this.menu.chemin);
+    
     /**
      * Changer le titre de la page HTML
      */
-    console.log('titre_'+this.langue, this.menu['titre_'+this.langue]);
     this.tServ.setTitle("VInCI / " + this.menu['titre_'+this.langue]);
   }
   /**
@@ -115,7 +113,6 @@ export class MenusService {
    * @param { string } alias Alias du menu servant à faire le tri
    */
   getPage(alias: string) {
-    console.log("Get page");
     if (!this.pages.hasOwnProperty(alias)) {
       this.http.get<Array<any>>(environment.uri + '/' + alias).subscribe(p => {
         this.pages[this.menu.chemin] = p;
@@ -139,5 +136,11 @@ export class MenusService {
       })
     }
   }
-
+  /**
+   * Définir le choix RGPD
+   */
+  setRgpd(){
+    this.rgpd = !this.rgpd;
+    localStorage.setItem('rgpd', String(this.rgpd));
+  }
 }

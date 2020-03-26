@@ -1,13 +1,20 @@
-section{
-    color:white;
+section {
+    color: white;
 }
-section>article{
-    display:flex;
-    flex-flow:row nowrap;
+
+section>article>div {
+    display: flex;
+    flex-flow: row nowrap;
 }
-section>article p{
-    width:70%;
+
+section>article>div>div {
+    width: 75%;
 }
-section>article label{
-    margin:auto;
+
+section>article p {
+    width: 70%;
+}
+
+section>article label {
+    margin: auto;
 }

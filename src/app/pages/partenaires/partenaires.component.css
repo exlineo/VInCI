@@ -1,4 +1,5 @@
-main>section:nth-child(2) {
+section,
+a {
     color: black;
     display: flex;
     flex-flow: row wrap;

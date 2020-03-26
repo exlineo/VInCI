@@ -1,4 +1,10 @@
 <main>
-    <section [style.background-color]="mServ.menu.couleurGauche.code"></section>
-    <section [style.background-color]="mServ.menu.couleurDroite.code"></section>
+    <section [style.background-color]="mServ.menu.couleurGauche.code" class="contenu">
+        <h1>{{ mServ.menu['titre_'+mServ.langue] }}</h1>
+        <article *ngFor="let a of mServ.pages[mServ.menu.chemin]">
+            <h2 *ngIf="a.intro">{{ a.intro }}</h2>
+            <div [innerHtml]="a.contenu | mark"></div>
+        </article>
+    </section>
+    <section [style.background-color]="mServ.menu.couleurDroite.code" [style.background-image]="'url(' + (mServ.menu.medias[0].url | mediaPipe) + ')'" class="img"></section>
 </main>

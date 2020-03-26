@@ -11,14 +11,6 @@ export class RgpdComponent implements OnInit {
   constructor(public mServ: MenusService) { }
 
   ngOnInit() {
-  }
-  choixRGPD(c: string) {
-    switch (c) {
-      case "analytics":
-        break;
-      case "interaction":
-        break;
-
-    }
+    console.log("RGPD", this.mServ.rgpd);
   }
 }

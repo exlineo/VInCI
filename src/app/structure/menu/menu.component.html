@@ -8,11 +8,12 @@
     <a href routerLink="/" title="VInCI">
         <img src="assets/images/Logo_VinCi_nb_web.png" title="Projet VInCI" alt="Logo du projet VInCI" />
     </a>
-
+    <i class="fas fa-bars"></i>
+    <input type="checkbox" class="mobile" #check>
     <nav>
         <ul>
             <li *ngFor="let m of (mServ.menus | menusPipe:'principal' | slice:1)">
-                <a href [routerLink]="m.chemin" [title]="m['titre_'+mServ.langue]">
+                <a (click)="goTo(m.chemin); check.checked=''" [title]="m['titre_'+mServ.langue]">
                     <i [class]="'fas ' + m.icone"></i>{{ m['titre_'+mServ.langue] }}
                 </a>
             </li>
@@ -22,7 +23,7 @@
 <nav>
     <ul>
         <li *ngFor="let p of (mServ.menus | menusPipe:'pied' | lang:mServ.langue)">
-            <a href [routerLink]="p.chemin" [title]="p.titre">
+            <a href [routerLink]="p.chemin" [title]="p['titre_'+mServ.langue]">
                 <i [class]="'fas ' + p.icone"></i>
             </a>
         </li>

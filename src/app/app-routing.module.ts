@@ -22,8 +22,8 @@ const routes: Routes = [
   {path:'actualites', component:NewsComponent},
   {path:'contacts', component:ContactComponent},
   {path:'sitemaps', component:SitemapComponent},
-  {path:'rgpd', component:RgpdComponent},
-  {path:'mentions', component:MentionsComponent},
+  {path:'rgpds', component:RgpdComponent},
+  {path:'mentionslegales', component:MentionsComponent},
   {path:'connexion', component:ConnexionComponent},
   { path: '**', component:Erreur404Component }
 ];

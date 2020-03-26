@@ -1,33 +1,17 @@
 <main>
-    <section>
+    <section [style.background-color]="mServ.menu.couleurGauche.code" class="contenu">
         <h1>{{ mServ.menu['titre_'+mServ.langue] }}</h1>
-        <article>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra sem ut consectetur convallis. Aliquam malesuada quam urna. Mauris malesuada tortor sit amet efficitur pharetra. Quisque convallis dignissim metus a facilisis. Nulla vitae dapibus
-            nunc. Pellentesque a nibh magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam quis eros et erat condimentum blandit. Morbi tincidunt posuere mauris, a lacinia nisi condimentum ac.
-        </article>
-        <h2>
-            Analyse du trafic
-        </h2>
-        <article>
-            <p>Autorisez-vous l'enregistrement de données d'analyse de votre trafic par Google Analytics (<a href="https://fr.wikipedia.org/wiki/Google_Analytics" title="Plus d'informations sur wikipedia" target="_blank">en savoir plus sur cet outil</a>)</p>
-            <label class="switch" (click)="choixRGPD('analytics')">
-                <input type="checkbox">
+        <article *ngFor="let a of mServ.pages[mServ.menu.chemin] | lang:mServ.langue">
+            <!-- <h2 *ngIf="a.intro">{{ a.intro }}</h2> -->
+            <div>
+                <div [innerHtml]="a.contenu | mark"></div>
+                <label class="switch" (click)="mServ.setRgpd()">
+                <input type="checkbox" [checked]="mServ.rgpd" (click)="mServ.setRgpd()">
                 <span class="slider"></span>
             </label>
+            </div>
         </article>
-        <article>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra sem ut consectetu</p>
-            <label class="switch" (click)="choixRGPD('local')">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-        </article>
-        <article>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra sem ut consectetu</p>
-            <label class="switch" (click)="choixRGPD('interaction')">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-        </article>
+    </section>
+    <section [style.background-color]="mServ.menu.couleurDroite.code" [style.background-image]="'url(' + (mServ.menu.medias[0].url | mediaPipe) + ')'" class="img">
     </section>
 </main>

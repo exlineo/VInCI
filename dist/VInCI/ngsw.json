@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1585051930881,
+  "timestamp": 1585227969949,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -10,14 +10,14 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main-es2015.f61ba33bdb21a95359d9.js",
-        "/main-es5.f61ba33bdb21a95359d9.js",
+        "/main-es2015.426c37669a90ea456c33.js",
+        "/main-es5.426c37669a90ea456c33.js",
         "/manifest.webmanifest",
         "/polyfills-es2015.ca64e4516afbb1b890d5.js",
         "/polyfills-es5.fb4cff7f451982eaa677.js",
         "/runtime-es2015.0811dcefd377500b5b1a.js",
         "/runtime-es5.0811dcefd377500b5b1a.js",
-        "/styles.1831f3c55841077db142.css"
+        "/styles.33d56fd328ac08ce64a4.css"
       ],
       "patterns": []
     },
@@ -46,6 +46,7 @@
         "/assets/icons/icon-512x512.png",
         "/assets/icons/icon-72x72.png",
         "/assets/icons/icon-96x96.png",
+        "/assets/icons/marqueur_48.png",
         "/assets/images/Logo_VinCi_nb_web.png",
         "/assets/images/es.png",
         "/assets/images/fr.png",
@@ -96,6 +97,7 @@
     "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
     "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/icons/marqueur_48.png": "f2ac8d124707d8d5c7b84ce9eeafb761d877f4fc",
     "/assets/images/Logo_VinCi_nb_web.png": "9a4c668ea103eaf1d16e2c90b3e4080576dfb191",
     "/assets/images/es.png": "f86370402a8d5b7789d9b67851621cb5b07b9798",
     "/assets/images/fr.png": "a83cfc960ee542dd2b5561d7064d7d03e45e4c0d",
@@ -110,15 +112,15 @@
     "/assets/images/uk.png": "2ff67294111a5a79c4c781e4c631bf14713176f2",
     "/assets/particles.min.js": "8017f8b1869077db728573f1ca4684a00af69462",
     "/favicon.ico": "02c50deaadcbb508e0ee7844299030a59f1af2c3",
-    "/index.html": "64b214e9afd921c27cf2b43d2dde660fcff11289",
-    "/main-es2015.f61ba33bdb21a95359d9.js": "1a8970644323cd104688a9e9e01e7d55c28bc156",
-    "/main-es5.f61ba33bdb21a95359d9.js": "5bf4b5c2e8e0fe67fe62b8529cc816cd1dcf7dfb",
+    "/index.html": "ae7b792c6832a6b69a600e0af8acede3933d36ac",
+    "/main-es2015.426c37669a90ea456c33.js": "46edee7ece7900b73298036a5e01058f81e1b57b",
+    "/main-es5.426c37669a90ea456c33.js": "1c7a7df8bac431523e6e35a2d66a84e4f3157c0e",
     "/manifest.webmanifest": "29fe2873d75bf70d8886ff8f749459dbc10509dd",
     "/polyfills-es2015.ca64e4516afbb1b890d5.js": "8779ed8d9bf0580e1b50b352a9b8fd520be24433",
     "/polyfills-es5.fb4cff7f451982eaa677.js": "d5158605c08abe16a3992ccf4604bf8d2a934964",
     "/runtime-es2015.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/runtime-es5.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/styles.1831f3c55841077db142.css": "e43f171988bec8d64a7b698c46ca597af86367e5"
+    "/styles.33d56fd328ac08ce64a4.css": "6fd173d8375c6590966da99c070d10c88a5d2c65"
   },
   "navigationUrls": [
     {

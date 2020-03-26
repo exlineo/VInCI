@@ -3,6 +3,8 @@ import { Router, NavigationEnd } from '@angular/router';
 
 import { MenusService } from './utils/services/menus.service';
 
+declare let gtag: Function;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,6 +15,17 @@ export class AppComponent {
 
   constructor(private route: Router, public mServ: MenusService) {
     this.getRoute();
+
+    this.route.events.subscribe(event => {
+      if(event instanceof NavigationEnd){
+        if(this.mServ.rgpd){
+          gtag('config', 'UA-2790631-41', 
+                {
+                  'page_path': event.urlAfterRedirects
+                }
+               );
+       }}
+      });
   }
 
   changeRoute() {
@@ -20,7 +33,7 @@ export class AppComponent {
     this.getRoute();
   }
   getRoute(){
-    console.log("Chemin URL", this.route.url.substr(1,this.route.url.length));
-    this.mServ.getMenu(this.route.url.substr(1,this.route.url.length));
+    let r:string = this.route.url.substr(1,this.route.url.length);
+    this.mServ.getMenu(r);
   }
 }

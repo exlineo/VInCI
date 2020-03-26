@@ -3,24 +3,24 @@
         <h1>{{ mServ.menu['titre_'+mServ.langue] }}</h1>
         <form #f="ngForm">
             <label>
-                Votre nom* :
-                <input name="nom" type="text" [(ngModel)]="contact.nom" required #nom="ngModel" placeholder="Merci de renseigner votre nom">
+                {{ mServ.getTraduction('nom') }}
+                <input name="nom" type="text" [(ngModel)]="contact.nom" required #nom="ngModel" [placeholder]="mServ.getTraduction('nomplaceholder')">
                 <span *ngIf="nom.pristine || nom.hasError('required')">{{ mServ.getTraduction('messagenom') }}</span>
             </label>
             <label>
-                votre e-mail* :
-                <input name="mail" type="email" [(ngModel)]="contact.mail" required #mail="ngModel" placeholder="Merci de renseigner un email">
+                {{ mServ.getTraduction('email') }}
+                <input name="mail" type="email" [(ngModel)]="contact.mail" required #mail="ngModel" [placeholder]="mServ.getTraduction('emailplaceholder')">
                 <span *ngIf="mail.invalid && (mail.dirty || mail.touched)">{{ mServ.getTraduction('erreuremail') }}</span>
                 <span *ngIf="mail.pristine || mail.hasError('required')">{{ mServ.getTraduction('messageemail') }}</span>
             </label>
             <label>
-                Sujet de votre message
-                <input name="sujet" type="text" [(ngModel)]="contact.sujet" #sujet="ngModel" required placeholder="De quoi voudriez-vous nous parler ?">
+                {{ mServ.getTraduction('messagesujet') }}
+                <input name="sujet" type="text" [(ngModel)]="contact.sujet" #sujet="ngModel" required [placeholder]="mServ.getTraduction('messagesujetplaceholder')">
                 <span *ngIf="sujet.pristine || sujet.hasError('required')">{{ mServ.getTraduction('messagesujet') }}</span>
             </label>
             <label>
-                Votre message* :
-                <textarea name="message" required #message="ngModel" [(ngModel)]="contact.message"  placeholder="Merci pour votre message"></textarea>
+                {{ mServ.getTraduction('message') }}
+                <textarea name="message" required #message="ngModel" [(ngModel)]="contact.message" [placeholder]="mServ.getTraduction('messageplaceholder')"></textarea>
                 <span *ngIf="message.pristine || message.hasError('required')">{{ mServ.getTraduction('erreurcontenu') }}</span>
             </label>
             <div>

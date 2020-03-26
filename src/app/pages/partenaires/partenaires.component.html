@@ -1,19 +1,28 @@
 <main>
 
     <section [style.background-color]="mServ.menu.couleurGauche.code" id="map" class="map">
-        <agm-map [latitude]="coord.lat" [longitude]="coord.long" [zoom]="coord.zoom"></agm-map>
+        <agm-map [latitude]="coord.lat" [longitude]="coord.long" [zoom]="coord.zoom">
+            <agm-marker [latitude]="m.coordonnees.split(', ')[0]" [longitude]="m.coordonnees.split(', ')[1]" iconUrl="assets/icons/marqueur_48.png" (markerClick)="marqueurClic(i)" *ngFor="let m of mServ.pages[mServ.menu.chemin]; let i=index">
+                <agm-info-window [disableAutoPan]="false" #infoWindow>
+                    <h4>{{ m.nom }}</h4>
+                    <a [href]="m.lien" target="_blank" [title]="m.nom">{{m.lien}}</a>
+                </agm-info-window>
+            </agm-marker>
+        </agm-map>
     </section>
 
     <section [style.background-color]="mServ.menu.couleurDroite.code" class="colonne">
         <h1>{{ mServ.menu['titre_'+mServ.langue] }}</h1>
-        <article *ngFor="let p of mServ.pages[mServ.menu.chemin] | lang:mServ.langue">
+        <article *ngFor="let p of mServ.pages[mServ.menu.chemin]">
             <h2>{{ p.nom }} <span *ngIf="p.acronyme">({{ p.acronyme }})</span></h2>
+            <p>{{ p.infos }}</p>
             <ul>
                 <li><em>Statut</em> : {{ p.statut }}</li>
                 <li><em>Pays</em> : {{ p.pays }}</li>
                 <li><em>Groupe de travail impliqués</em> : {{ p.gt }}</li>
+                <li><a [href]="p.lien" target="_blank">{{ p.lien }}</a></li>
             </ul>
             <span class="separation"></span>
         </article>
     </section>
-</main>s
+</main>
