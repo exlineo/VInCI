@@ -9,6 +9,7 @@ export const environment = {
     api: "",
     coord: { lat: 43.761558, long: -2.133068, zoom: 6 }
   },
+  email:"contact@exlineo.com",
   particles: {
     style: {
       'position': 'fixed',

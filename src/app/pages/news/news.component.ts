@@ -9,9 +9,22 @@ import { ToolsService } from 'src/app/utils/tools.service';
 })
 export class NewsComponent implements OnInit {
 
+  filtre:string;
+
   constructor(public mServ:MenusService, public toolsServ:ToolsService) { }
 
   ngOnInit() {
+    
+  }
+  /**
+   * Afficher toutes les news ou juste une
+   */
+  setFiltre(){
+    if(!this.filtre || this.filtre.length == 0){
+      this.filtre = this.mServ.langue;
+    }else{
+      this.filtre = '';
+    }
   }
 
 }

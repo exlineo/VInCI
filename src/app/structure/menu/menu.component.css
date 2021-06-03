@@ -183,3 +183,16 @@ header>i {
         /* display: block; */
     }
 }
+
+@media print {
+    nav, footer, aside {
+      display:none;
+    }
+    body {
+      font-size:120%;
+      color:black;
+    }
+    main>section{
+        background:none;
+    }
+}

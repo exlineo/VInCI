@@ -17,9 +17,8 @@
             <h2>{{ p.nom }} <span *ngIf="p.acronyme">({{ p.acronyme }})</span></h2>
             <p>{{ p.infos }}</p>
             <ul>
-                <li><em>Statut</em> : {{ p.statut }}</li>
-                <li><em>Pays</em> : {{ p.pays }}</li>
-                <li><em>Groupe de travail impliqués</em> : {{ p.gt }}</li>
+                <li><em>{{ mServ.getTraduction('statut') }}</em> : {{ p.statut }}</li>
+                <li><em>{{ mServ.getTraduction('pays') }}</em> : {{ p.pays }}</li>
                 <li><a [href]="p.lien" target="_blank">{{ p.lien }}</a></li>
             </ul>
             <span class="separation"></span>

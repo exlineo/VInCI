@@ -4,7 +4,14 @@
         <article *ngFor="let a of mServ.pages[mServ.menu.chemin]">
             <h2>{{ a.titre }}</h2>
             <blockquote *ngIf=" a.description ">{{ a.description }}</blockquote>
-            <a [href]="a.lien" [title]="a.titre" target="_blank" *ngIf="a.lien" class="lien">Plus d'infos</a>
+            <a [href]="a.lien" [title]="a.titre" target="_blank" *ngIf="a.lien" class="lien">{{ mServ.getTraduction('plus') }}</a>
+            <h3 *ngIf="a.fichiers && a.fichiers.length > 0">{{ mServ.getTraduction('fichiers') }}</h3>
+            <ul *ngIf="a.fichiers && a.fichiers.length > 0">
+                <li *ngFor="let f of a.fichiers">
+                    <a *ngIf="f.fichiers.url" [href]="f.fichiers.url" target="_blank"><i class="fas fa-paperclip"></i> {{ f.titre }} ({{ f.fichiers.ext }})</a>
+                    <a *ngIf="f.lien" [href]="f.lien" target="_blank"><i class="fas fa-paperclip"></i> {{ f.titre }}</a>
+                </li>
+            </ul>
         </article>
     </section>
     <section [style.background-color]="mServ.menu.couleurDroite.code" [style.background-image]="'url(' + (mServ.menu.medias[0].url | mediaPipe) + ')'" class="img"></section>

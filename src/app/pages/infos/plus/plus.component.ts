@@ -10,8 +10,8 @@ import { MenusService } from 'src/app/utils/services/menus.service';
 export class PlusComponent implements OnInit {
 
   @Input()
-  infos:string; // Informations à afficher dans la lightbox
-
+  infos:any; // Informations à afficher dans la lightbox
+  
   constructor(public toolServ:ToolsService, public mServ:MenusService) { }
 
   ngOnInit(): void {

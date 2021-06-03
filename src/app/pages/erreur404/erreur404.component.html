@@ -1,4 +1,9 @@
 <main>
     <section [style.background-color]="mServ.menu.couleurGauche.code" class="img"></section>
-    <section [style.background-color]="mServ.menu.couleurDroite.code" class="contenu"></section>
+    <section [style.background-color]="mServ.menu.couleurDroite.code" class="contenu">
+        <article>
+            <h1>{{ mServ.getTraduction('erreur404') }}</h1>
+            <h2>{{ mServ.getTraduction('erreur404Soustitre') }}</h2>
+        </article>
+    </section>
 </main>

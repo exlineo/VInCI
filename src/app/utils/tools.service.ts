@@ -7,7 +7,7 @@ import { MenusService } from './services/menus.service';
 })
 export class ToolsService {
 
-  article:string; // article à afficher dans une lightbox
+  article:any; // article à afficher dans une lightbox
 
   constructor(private route:Router) { }
   /**
@@ -21,7 +21,8 @@ export class ToolsService {
    * Afficher un article en lightbox
    * @param a Données à afficher dans l'article
    */
-  showArticle(a:string){
+  showArticle(a:any){
+    console.log(a);
     this.article = a;
   }
   /**

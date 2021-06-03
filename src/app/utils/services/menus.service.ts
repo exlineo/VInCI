@@ -15,6 +15,7 @@ export class MenusService {
   menus: Array<MenuI> = [new LMenus()]; // Liste des ménus sélectionnés
   menu: MenuI = new LMenus(); // Menu actuellement sélectionné
   page: Array<any> = [new Object()]; // Page actuelle
+  contacts:Array<any> = [new Object()]; // Créer une liste de contacts vides
   pages: any;
   traductions: Array<any> = [new Object()];
   maintenance:boolean;
@@ -106,7 +107,9 @@ export class MenusService {
     /**
      * Changer le titre de la page HTML
      */
-    this.tServ.setTitle("VInCI / " + this.menu['titre_'+this.langue]);
+    if(this.menu['titre_'+this.langue]){
+      this.tServ.setTitle("VInCI / " + this.menu['titre_'+this.langue]);
+    }
   }
   /**
    * Récupérer les pages du site
@@ -142,5 +145,22 @@ export class MenusService {
   setRgpd(){
     this.rgpd = !this.rgpd;
     localStorage.setItem('rgpd', String(this.rgpd));
+  }
+  /**
+   * Envoyer un email depuis le formulaire de contact
+   * @param f Données du formulaire pour l'envoie d'emails
+   */
+  envoieMail(f:any){
+    return this.http.post(environment.uri + '/email', f);
+  }
+  /**
+   * Récupérer l'ensemble des contacts à afficher dans la page 'projet'
+   */
+  getContacts(){
+    if (this.contacts.length < 2) {
+      this.http.get<Array<any>>(environment.uri + '/contacts').subscribe(c => {
+        this.contacts = c;
+      });
+    }
   }
 }

@@ -6,10 +6,36 @@
             <h2>{{ a.titre }}</h2>
             <blockquote>{{ a.intro }}</blockquote>
             <p class="cache">{{ a.contenu }}</p>
-
-            <button (click)="toolsServ.showArticle(a.contenu)">En savoir plus</button>
-            <!-- <div [innerHtml]="a.contenu | mark"></div> -->
+            <button (click)="toolsServ.showArticle(a)">{{ mServ.getTraduction('plus') }}</button>
+            <h3 *ngIf="a.fichiers && a.fichiers.length > 0">{{ mServ.getTraduction('fichiers') }}</h3>
+            <ul *ngIf="a.fichiers && a.fichiers.length > 0">
+                <li *ngFor="let f of a.fichiers">
+                    <a *ngIf="f.fichiers.url" [href]="f.fichiers.url" target="_blank"><i class="fas fa-paperclip"></i> {{ f.titre }} ({{ f.fichiers.ext }})</a>
+                    <a *ngIf="f.lien" [href]="f.lien" target="_blank"><i class="fas fa-paperclip"></i> {{ f.titre }}</a>
+                </li>
+            </ul>
         </article>
+        <ul>
+            <h1>
+                {{ mServ.getTraduction('equipeprojet') }}
+            </h1>
+            <article *ngFor="let c of mServ.contacts" class="contact">
+                <div [style.background-image]="'url(' + (c.logo.url | mediaPipe) + ')'" *ngIf="c.logo"></div>
+                <!-- <img [src]="c.logo.url | mediaPipe" *ngIf="c.logo" /> -->
+                <div>
+                    <h2>{{ c.contact }}</h2>
+                    <blockquote>{{ c.organisation }}</blockquote>
+
+                    <p *ngIf="c.infos">
+                        {{ c.infos }}
+                    </p>
+                    <ul>
+                        <li><a [href]="'mailto:' + c.email" [title]="mServ.getTraduction('envoimailcontact')"><i class="fas fa-envelope"></i></a></li>
+                        <li><a [href]="c.lien" [title]="mServ.getTraduction('plus')"><i class="fas fa-link"></i></a></li>
+                    </ul>
+                </div>
+            </article>
+        </ul>
     </section>
 </main>
 <app-plus [infos]="toolsServ.article" *ngIf="toolsServ.article"></app-plus>

@@ -1,7 +1,8 @@
 <main>
     <section [style.background-color]="mServ.menu.couleurGauche.code" class="contenu">
         <h1>{{ mServ.menu['titre_'+mServ.langue] }}</h1>
-        <form #f="ngForm">
+        <h3 *ngIf="retour">{{ retour }}</h3>
+        <form #f="ngForm" (ngSubmit)="envoyer()" >
             <label>
                 {{ mServ.getTraduction('nom') }}
                 <input name="nom" type="text" [(ngModel)]="contact.nom" required #nom="ngModel" [placeholder]="mServ.getTraduction('nomplaceholder')">
@@ -9,22 +10,25 @@
             </label>
             <label>
                 {{ mServ.getTraduction('email') }}
-                <input name="mail" type="email" [(ngModel)]="contact.mail" required #mail="ngModel" [placeholder]="mServ.getTraduction('emailplaceholder')">
+                <input name="mail" type="email" [(ngModel)]="contact.mail" required #mail="ngModel" [placeholder]="mServ.getTraduction('emailplaceholder')" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                 <span *ngIf="mail.invalid && (mail.dirty || mail.touched)">{{ mServ.getTraduction('erreuremail') }}</span>
                 <span *ngIf="mail.pristine || mail.hasError('required')">{{ mServ.getTraduction('messageemail') }}</span>
             </label>
             <label>
                 {{ mServ.getTraduction('messagesujet') }}
                 <input name="sujet" type="text" [(ngModel)]="contact.sujet" #sujet="ngModel" required [placeholder]="mServ.getTraduction('messagesujetplaceholder')">
-                <span *ngIf="sujet.pristine || sujet.hasError('required')">{{ mServ.getTraduction('messagesujet') }}</span>
+                <span *ngIf="sujet.pristine || sujet.hasError('required')">{{ mServ.getTraduction('renseignersujet') }}</span>
             </label>
             <label>
                 {{ mServ.getTraduction('message') }}
                 <textarea name="message" required #message="ngModel" [(ngModel)]="contact.message" [placeholder]="mServ.getTraduction('messageplaceholder')"></textarea>
                 <span *ngIf="message.pristine || message.hasError('required')">{{ mServ.getTraduction('erreurcontenu') }}</span>
             </label>
+            
+            <input name="captcha" type="number" required placeholder="14+8 ?" pattern="22">
+
             <div>
-                <input type="submit" [value]="mServ.getTraduction('envoyer')" (click)="envoyer()" [disabled]="f.invalid" class="vert">
+                <input type="submit" [value]="mServ.getTraduction('envoyer')" [disabled]="f.invalid" class="vert">
                 <input type="reset" [value]="mServ.getTraduction('annuler')" class="rouge">
             </div>
 

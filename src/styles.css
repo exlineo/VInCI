@@ -370,7 +370,12 @@ input.ng-valid,
 textarea.ng-valid {
     border-bottom: 1px solid #2D5C5C;
 }
-
+input[disabled]{
+    opacity:0.5;
+}
+input[disabled]:hover{
+    background-color: grey;
+}
 textarea {
     min-height: 150px;
 }
