@@ -37,7 +37,7 @@ header>a {
     margin: 10px auto;
 }
 
-header a>img {
+header a > img {
     width: 100%;
 }
 
@@ -170,7 +170,7 @@ header>i {
         font-size: 32px;
         margin: auto;
         position: absolute;
-        right: 20%;
+        right: 20px;
     }
     input.mobile {
         display: block;

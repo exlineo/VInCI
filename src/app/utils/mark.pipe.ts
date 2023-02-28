@@ -21,14 +21,12 @@ export class MarkPipe implements PipeTransform {
 export class LangPipe implements PipeTransform {
 
   transform(values: any[], l:string=null): any {
-    console.log('l', l);
     if (!values || !values.length) return [];
     if (!l || l.length == 0) return values;
 
     return values.filter(v => {
       // Filtre sur le titre
       if(v.langue.code.indexOf(l) >= 0){
-        console.log('v', v);
         return v;
       }
     });
