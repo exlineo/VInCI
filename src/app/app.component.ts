@@ -19,7 +19,7 @@ export class AppComponent {
     this.route.events.subscribe(event => {
       if(event instanceof NavigationEnd){
         if(this.mServ.rgpd){
-          gtag('config', 'UA-2790631-41', 
+          gtag('config', 'UA-2790631-41',
                 {
                   'page_path': event.urlAfterRedirects
                 }

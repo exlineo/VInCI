@@ -35,6 +35,7 @@ import { environment } from '../environments/environment';
 import { ParticlesModule } from 'angular-particle';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ReversePipe } from './utils/reverse.pipe';
+import { ResultatsComponent } from './pages/resultats/resultats.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { ReversePipe } from './utils/reverse.pipe';
     LangPipe,
     PairePipe,
     PlusComponent,
-    ReversePipe
+    ReversePipe,
+    ResultatsComponent
   ],
   imports: [
     BrowserModule,

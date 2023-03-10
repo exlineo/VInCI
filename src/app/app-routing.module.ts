@@ -12,10 +12,12 @@ import { SitemapComponent } from './pages/infos/sitemap/sitemap.component';
 import { RgpdComponent } from './pages/infos/rgpd/rgpd.component';
 import { MentionsComponent } from './pages/infos/mentions/mentions.component';
 import { ConnexionComponent } from './pages/connexion/connexion.component';
+import { ResultatsComponent } from './pages/resultats/resultats.component';
 
 const routes: Routes = [
   {path:'', component:AccueilComponent},
   {path:'projets', component:ProjetComponent},
+  {path:'resultats', component:ResultatsComponent},
   {path:'actions', component:ActionsComponent},
   {path:'partenaires', component:PartenairesComponent},
   {path:'publications', component:PublicationsComponent},

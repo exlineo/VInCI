@@ -10,9 +10,7 @@ export class ToolsService {
   article:any; // article à afficher dans une lightbox
 
   constructor(private route:Router) { }
-  /**
-   * Récupérer la route actuelle
-   */
+  /** Récupérer la route actuelle */
   getRoute(){
     console.log(this.route.url.substr(1, this.route.url.length));
     return this.route.url.substr(1, this.route.url.length);
@@ -25,10 +23,10 @@ export class ToolsService {
     console.log(a);
     this.article = a;
   }
-  /**
-   * Cacher un article en lightbox
-   */
+  /** Cacher un article en lightbox */
   hideArticle(){
     this.article = null;
   }
+  /** gérer des onglets */
+  onglet(event){}
 }

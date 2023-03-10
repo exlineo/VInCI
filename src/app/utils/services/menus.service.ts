@@ -5,7 +5,6 @@ import { Title } from '@angular/platform-browser';
 import { environment } from '../../../environments/environment';
 
 import { MenuI, LMenus, ImgI } from '../modeles/sets';
-import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -101,9 +100,7 @@ export class MenusService {
           break;
         }
       }
-      
     this.getPage(this.menu.chemin);
-    
     /**
      * Changer le titre de la page HTML
      */
@@ -115,17 +112,16 @@ export class MenusService {
    * Récupérer les pages du site
    * @param { string } alias Alias du menu servant à faire le tri
    */
-  getPage(alias: string) {
+  async getPage(alias: string) {
     if (!this.pages.hasOwnProperty(alias)) {
-      this.http.get<Array<any>>(environment.uri + '/' + alias).subscribe(p => {
+      await this.http.get<Array<any>>(environment.uri + '/' + alias).subscribe(p => {
         this.pages[this.menu.chemin] = p;
+        console.log(this.menu, p, this.pages);
         document.getElementById("loader").classList.add('cache');
       });
-    }else{
-      this.page = this.pages[this.menu.chemin];
     }
+    this.page = this.pages[this.menu.chemin];
   }
-
   /**
    * Ajouter l'URL aux média pour leur chargement
    * @param m Un média ou une liste de médias
